@@ -7,8 +7,12 @@ import Sidebar from './Sidebar';
 const App = () => {
     return (
         <div>
+            <Navbar />
+        <div className="container">
             <Home />
             <Sidebar />
+        </div>
+            <Footer />
         </div>
     );
 };
