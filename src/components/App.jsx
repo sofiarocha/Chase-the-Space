@@ -1,11 +1,10 @@
 import React from 'react';
-
-import TitleHomeContainer from './TitleHomeContainer';
+import Home from './Home';
 
 const App = () => {
     return (
         <div>
-            <TitleHomeContainer />
+            <Home />
         </div>
     );
 };
