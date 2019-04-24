@@ -5,12 +5,14 @@ import Card from './Card';
 const Home = () => {
     return (
         <div className="container">
-            <div id="section1">
+            <div className="section1">
                 <TitleHomeContainer />
             </div>
-            <div id="section2">
-                <Card />
-                <Card />
+            <div className="section2">
+                <div className="row">
+                    <Card />
+                    <Card />
+                </div>
             </div>
         </div>
     );
