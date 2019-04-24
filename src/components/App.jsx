@@ -2,13 +2,13 @@ import React from 'react';
 import Footer from './Footer';
 import Navbar from './Navbar';
 import Home from './Home';
+import Sidebar from './Sidebar';
 
 const App = () => {
     return (
         <div>
-            <Navbar />
             <Home />
-            <Footer />
+            <Sidebar />
         </div>
     );
 };
