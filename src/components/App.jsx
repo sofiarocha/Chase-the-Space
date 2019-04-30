@@ -3,14 +3,17 @@ import { Route, Switch } from "react-router-dom";
 import Footer from './Footer';
 import Navbar from './Navbar';
 import Home from './Home';
+import Sidebar from './Sidebar';
 import ISS from './ISS';
 import APOD from './APOD';
 
 
 const App = () => {
     return (
-        <div>
+        <div className= "container">
             <Navbar />
+            <Home />
+            <Sidebar />
             <Footer />
 
             <Switch>
