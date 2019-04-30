@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from './Footer';
 import Navbar from './Navbar';
 import Home from './Home';
 
@@ -6,9 +7,8 @@ const App = () => {
     return (
         <div>
             <Navbar />
-            <div>
-                <Home />
-            </div>
+            <Home />
+            <Footer />
         </div>
     );
 };
