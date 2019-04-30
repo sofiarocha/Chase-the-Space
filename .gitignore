@@ -3,3 +3,5 @@
 build
 yarn-error.log
 yarn.lock
+.env
+.env.development
