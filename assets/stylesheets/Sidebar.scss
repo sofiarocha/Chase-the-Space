@@ -1,17 +1,10 @@
 .asside{
     img {
-      width:100%
+      width:100%;
+      height: 115px;
+      vertical-align: middle;
+      display: flex;
     }
+    
   }
 
-  @media (min-width: 768px){
-    .container{
-      max-width:100%;
-    }  
-  }
-  
-  @media (min-width: 992px){
-    .container{
-      max-width:100%;
-    }
-  }
