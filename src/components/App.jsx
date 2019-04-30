@@ -6,12 +6,10 @@ import Sidebar from './Sidebar';
 
 const App = () => {
     return (
-        <div>
+        <div className= "container">
             <Navbar />
-        <div className="container">
             <Home />
             <Sidebar />
-        </div>
             <Footer />
         </div>
     );
