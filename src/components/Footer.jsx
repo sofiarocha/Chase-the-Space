@@ -4,22 +4,16 @@ import React from 'react';
 
 const Footer = () => {
     return (
-                <footer className="w-100 footer bg-dark pt-4">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-12 col-md-6">
-                                <a href="https://wildcodeschool.com/"> Wild Code School</a>
-                            </div>
-
-                            <div className="col-12 col-md-6">
-
-                            </div>
-             
-                        </div>
+        <footer className="w-100 footer bg-dark pt-4">
+            <div className="container">
+                <div className="row">
+                    <div className="col">
+                        <p> ChaseTheSpace@2019 made by &nbsp;&nbsp;<a href="">Us</a>at &nbsp;&nbsp; <a href="https://wildcodeschool.com/"> Wild Code School</a></p>
                     </div>
-                </footer>
+                </div>
+            </div>
+        </footer>
 
  );
 };
-
 export default Footer;
