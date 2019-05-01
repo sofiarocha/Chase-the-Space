@@ -29,7 +29,7 @@ const images = [
       },
       {
         src: 'http://en.roscosmos.ru/media/img/foto/ovchinin_alexey.jpg',
-        title: 'Ovchinin Alexey',
+        title: 'Alexey Ovchinin',
         description: 'image description'
       }
       
