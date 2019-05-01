@@ -21,7 +21,6 @@ class Game extends Component {
               });
         } else {
             this.setState({
-                astronauts: data.people,
                 answer: false
               });
             }
@@ -35,6 +34,7 @@ class Game extends Component {
     handleSubmit = (e) => {
       e.preventDefault();
       this.onGame();
+      this.setState({ astronauts: [] });
     }
 
     render() {
