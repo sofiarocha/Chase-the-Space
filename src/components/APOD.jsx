@@ -34,7 +34,7 @@ class APOD extends Component {
     render () {
         const { pictureOfDay, moreInfo } = this.state;
         const podStyle = {
-            background: `url(${pictureOfDay.url}) no-repeat 100%`,
+            background: `url(${pictureOfDay.hdurl}) no-repeat 100%`,
         };
         return (
             <div className="container">
