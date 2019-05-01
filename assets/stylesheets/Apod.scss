@@ -3,8 +3,10 @@ body {
   }
 
 .pod {
+    min-height: 100%;
     p {
-        color: #ffffff;
-        padding: 5%;
+        background-color: rgba(231, 225, 225, 0.35);
+        padding: 2vw;
+        font-size: calc(8px + 0.5vw);
     }
 }
