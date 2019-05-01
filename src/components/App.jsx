@@ -9,10 +9,8 @@ import APOD from './APOD';
 
 const App = () => {
     return (
-        <div className= "container">
+        <div className="container">
             <Navbar />
-            
-
             <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/iss" component={ISS} />
