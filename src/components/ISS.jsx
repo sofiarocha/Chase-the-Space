@@ -1,9 +1,11 @@
 import React from 'react';
+import Sidebar from './Sidebar';
 
 const ISS = () => {
     return (
-        <div>
+        <div className="container">
             <h1>ISS</h1>
+            <Sidebar />
         </div>
     );
 };
