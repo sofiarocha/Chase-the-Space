@@ -42,7 +42,7 @@ class APOD extends Component {
             <div className="container">
                 <div className="col-9">
                     <div className="pod" style={podStyle}>
-                        <button onClick={this.handleClick} type="button">More info</button>
+                        <button onClick={this.handleClick} type="button">{moreInfo ? "Hide info": "Show info"}</button>
                         {moreInfo
                         && <p><small>{pictureOfDay.explanation}</small></p>
                         }
