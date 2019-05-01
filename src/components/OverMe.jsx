@@ -5,7 +5,7 @@ const OverMe = () => {
         <div className="container">
             <h1>ISS</h1>
             <p>The International Space Station will be over me in 5 minutes</p>
-            <button>Share</button>
+            <button className="button">Share</button>
         </div>
     );
 };
