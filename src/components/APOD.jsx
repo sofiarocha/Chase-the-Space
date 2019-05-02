@@ -34,17 +34,15 @@ class APOD extends Component {
     render () {
         const { pictureOfDay, moreInfo } = this.state;
         const podStyle = {
-            background: `url(${pictureOfDay.url}) no-repeat 100%`,
+            background: `center / cover no-repeat url(${pictureOfDay.url})`
         };
         return (
-            <div className="container">
-                <div className="col-9">
-                    <div className="pod" style={podStyle}>
-                        <button onClick={this.handleClick} type="button">{moreInfo ? "Hide info" : "Show info"}</button>
-                        {moreInfo
-                        && <p>{pictureOfDay.explanation}</p>
-                        }
-                    </div>
+            <div className="apod-page">
+                <div className="pod" style={podStyle}>
+                    <button onClick={this.handleClick} type="button">{moreInfo ? "Hide info" : "Show info"}</button>
+                    {moreInfo
+                    && <p>{pictureOfDay.explanation}</p>
+                    }
                 </div>
             </div>
         );
