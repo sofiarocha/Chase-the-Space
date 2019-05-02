@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SideGallery from './SideGallery';
 
 class APOD extends Component {
     constructor(props) {
@@ -43,6 +44,9 @@ class APOD extends Component {
                     {moreInfo
                     && <p>{pictureOfDay.explanation}</p>
                     }
+                </div>
+                <div className="week-pictures">
+                    <SideGallery />
                 </div>
             </div>
         );
