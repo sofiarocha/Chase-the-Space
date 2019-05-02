@@ -10,7 +10,7 @@ import AboutUs from './AboutUs';
 
 const App = () => {
     return (
-        <div className="container">
+        <div>
             <Navbar />
             <Switch>
                 <Route exact path="/" component={Home} />

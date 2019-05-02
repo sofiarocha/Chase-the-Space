@@ -12,11 +12,7 @@ const AboutUs = () => {
         <div className="container">
             <div className="row">
                 <div className="col">
-                    <p>lalalalala</p>
-                    <p>lalalalala</p>
-                    <p>lalalalala</p>
-                    <p>lalalalala</p>
-                    {profiles.map(profile => {
+                    {profiles.map(profile => (
                         <Profile 
                             key={profile.name} 
                             name={profile.name} 
@@ -25,7 +21,7 @@ const AboutUs = () => {
                             linkedin={profile.linkedin}
                             github={profile.github}
                         />
-                    })}
+                    ))}
                 </div>
             </div>
         </div>
