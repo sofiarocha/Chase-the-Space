@@ -21,7 +21,6 @@ class Game extends Component {
               });
         } else {
             this.setState({
-                astronauts: data.people,
                 answer: false
               });
             }
@@ -35,6 +34,7 @@ class Game extends Component {
     handleSubmit = (e) => {
       e.preventDefault();
       this.onGame();
+      this.setState({ astronauts: [] });
     }
 
     render() {
@@ -44,17 +44,17 @@ class Game extends Component {
             <form>
                 <h5>Guess how many people are in space</h5>
                     <div className="flex">
-                        <input type="number" value={number} min="0" onChange={this.handleChange} />
-                        <input type="submit" onClick={this.handleSubmit} />
+                        <input className="bar" type="number" value={number} min="0" onChange={this.handleChange} />
+                        <input className="button" type="submit" value="GO" onClick={this.handleSubmit} />
                     </div>
             </form>
             <div>
-                {this.state.answer ? 'Correct!' : 'Try again :('}
+                {this.state.answer ? <p className="green">Correct!</p> : <p className="red">Try again :(</p>}
             </div>
             <div className="container">
                 {this.state.astronauts.map(astronaut =>
                     <div>
-                        <p key={astronaut.name}>{astronaut.name}</p>
+                        <p key={astronaut.name}> <a href={`http://en.wikipedia.org/wiki/${astronaut.name}`} target="_blank" >{astronaut.name}</a></p>
                     </div>
                 )}
             </div>

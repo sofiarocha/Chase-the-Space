@@ -10,7 +10,7 @@ class Navbar extends Component {
         return (
             <div>
                 <nav className="navbar fixed-top navbar-expand-lg bg-dark nav-pills nav-justified">
-                <a className="navbar-brand text-white" href="#">
+                <a className="navbar-brand text-white" href="/">
                 <img src="DarkPlanetIcon.jpg" width="50" height="50" className="d-inline-block" alt=""/>
                 ChaseTheSpace
                 </a>
