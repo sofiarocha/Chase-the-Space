@@ -1,12 +1,14 @@
 import React, { Fragment, Component } from 'react';
 
 const getWeekDates = () => {
-    const weekDaysDate = [1, 2, 3, 4, 5, 6, 7];
-    
+    const weekDays = [1, 2, 3, 4, 5, 6];
     const today = new Date();
-    const yesterday = today.setDate(today.getDate() - 1);
-    const formattedDate = `${new Date(yesterday).getFullYear()}-${new Date(yesterday).getMonth() + 1}-${new Date(yesterday).getDate()}`;
-    console.log(formattedDate);
+    const todayDay = today.getTime();
+    const weekDaysDate = weekDays.map((day) => {
+        const week = (todayDay - day * 24 * 60 * 60 * 1000);
+        return `${new Date(week).getFullYear()}-${new Date(week).getMonth() + 1}-${new Date(week).getDate()}`;
+    });
+    return weekDaysDate;
 };
 
 
