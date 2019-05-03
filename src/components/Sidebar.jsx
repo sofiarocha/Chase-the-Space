@@ -1,5 +1,4 @@
 import React from 'react';
-import SideGallery from '../../SideGallery';
 import OverMe from './OverMe';
 import Game from './Game';
 
