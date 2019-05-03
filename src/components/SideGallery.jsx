@@ -12,14 +12,19 @@ const getWeekDates = () => {
 };
 
 class SideGallery extends Component {
-
   onShowWeekGallery = () => {
-    weekDaysDate.forEach()
-    const dayUrl = "https://api.nasa.gov/planetary/apod?date=${date}&api_key=DV4ZLxIJ4QeI9eIXsHYlutwXWI8SwPNwRkbagwWt";
-  }
+      getWeekDates().forEach((date) => {
+          const dayUrl = `https://api.nasa.gov/planetary/apod?date=${date}&api_key=DV4ZLxIJ4QeI9eIXsHYlutwXWI8SwPNwRkbagwWt`;
+          fetch(dayUrl)
+            .then(response => response.json())
+            .then((data) => {
+                console.log(data);
+            });
+        });
+    }
 
   componentDidMount = () => {
-      getWeekDates();
+      this.onShowWeekGallery();
   }
 
   render () {
