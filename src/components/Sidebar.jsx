@@ -1,13 +1,16 @@
 import React from 'react';
 import SideGallery from '../../SideGallery';
+import OverMe from './OverMe';
+import Game from './Game';
 
 const Sidebar = () => {
     return (
-        <div className="container asside">
-            <div className="row">
-                <div className="col-md-3 offset-md-9 align-self-end">
-                <SideGallery />
-                </div>
+        <div className="container">
+            <div className="col-md-3 offset-md-9 align-self-end">
+                <br></br>
+                <OverMe />
+                <br></br>
+                <Game />
             </div>
         </div>
     );

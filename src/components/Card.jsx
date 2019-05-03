@@ -1,12 +1,13 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
-const Card = () => {
+const Card = ({ card }) => {
     return (
-        <div className="col-5">
-            <h1>ISS</h1>
-            <img className="card-image" src="https://images.unsplash.com/photo-1446776877081-d282a0f896e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80" alt="iss" />
-            <p>The International Space Station is a large spacecraft in orbit around Earth. It serves as a home where crews of astronauts and cosmonauts live. The space station is also a unique science laboratory.</p>
-        </div>
+        <Link to={`/${card.title.toLowerCase()}`} className="col-4">
+            <h1>{card.title}</h1>
+            <img className="card-image" src={card.imageSrc} alt={card.title.toLowerCase()} />
+            <p>{card.description}</p>
+        </Link>
     );
 };
 
