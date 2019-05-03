@@ -2,16 +2,15 @@ import React from 'react';
 import Profile from './Profile';
 
 const profiles = [
-    {name: "Isabella Fry", photo: "", description: "Passionate Web Developer ", linkedin: "", github: ""},
-    {name: "Sofia Rocha", photo: "", description: "Passionate Web Developer ", linkedin: "", github: ""},
-    {name: "Maria Ferreira", photo: "", description: "Passionate Web Developer ", linkedin: "", github: ""}
+    {name: "Isabella Fry", photo: "https://via.placeholder.com/150", description: "Passionate Web Developer ", linkedin: "", github: ""},
+    {name: "Sofia Rocha", photo: "https://via.placeholder.com/150", description: "Passionate Web Developer ", linkedin: "", github: ""},
+    {name: "Maria Ferreira", photo: "https://via.placeholder.com/150", description: "Passionate Web Developer ", linkedin: "", github: "https://github.com/cristinaferreira"}
 ];
 
 const AboutUs = () => {
     return (
-        <div className="container">
-            <div className="row">
-                <div className="col">
+        <div className="container aboutUsComponent">
+            <div className="row aboutUsComponent">
                     {profiles.map(profile => (
                         <Profile 
                             key={profile.name} 
@@ -22,7 +21,6 @@ const AboutUs = () => {
                             github={profile.github}
                         />
                     ))}
-                </div>
             </div>
         </div>
     );
