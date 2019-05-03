@@ -11,8 +11,13 @@ const getWeekDates = () => {
     return weekDaysDate;
 };
 
-
 class SideGallery extends Component {
+
+  onShowWeekGallery = () => {
+    weekDaysDate.forEach()
+    const dayUrl = "https://api.nasa.gov/planetary/apod?date=${date}&api_key=DV4ZLxIJ4QeI9eIXsHYlutwXWI8SwPNwRkbagwWt";
+  }
+
   componentDidMount = () => {
       getWeekDates();
   }

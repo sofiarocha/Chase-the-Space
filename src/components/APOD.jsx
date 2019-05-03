@@ -9,21 +9,20 @@ class APOD extends Component {
             moreInfo: false
         };
     }
-
-    componentDidMount = () => {
-        this.onShowPictureOfDay();
-    }
-
+    
     onShowPictureOfDay = () => {
         const apodUrl = "https://api.nasa.gov/planetary/apod?api_key=DV4ZLxIJ4QeI9eIXsHYlutwXWI8SwPNwRkbagwWt";
         fetch(apodUrl)
             .then(response => response.json())
             .then((data) => {
-                console.log(data);
                 this.setState({
                     pictureOfDay: data
                 });
             });
+    }
+
+    componentDidMount = () => {
+        this.onShowPictureOfDay();
     }
 
     handleClick = () => {
