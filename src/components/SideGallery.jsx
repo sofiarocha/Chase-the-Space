@@ -47,17 +47,16 @@ class SideGallery extends Component {
     }
 
     render () {
-        console.log(this.orderByDays(this.state.weekApod));
-        // console.log(this.state.weekApod);
         const { weekApod } = this.state;
+        const weekApodOrder = this.orderByDays(weekApod);
         return (
             <Fragment>
-                <img src={weekApod.url} alt="" />
-                <img src="https://apod.nasa.gov/apod/image/1904/M33Meteor_Chokshi_960.jpg" alt="" />
-                <img src="https://apod.nasa.gov/apod/image/1904/N11_Hubble_960.jpg" alt="" />
-                <img src="https://youtu.be/DmYK479EpQc" alt="" />
-                <img src="https://apod.nasa.gov/apod/image/1904/pia23122c-16_1067.jpg" alt="" />
-                <img src="https://apod.nasa.gov/apod/image/1904/FairbairnCROSSTOCARINA.jpg" alt="" />
+                {weekApodOrder.map((apod) => {
+                    if (apod.media_type === "video") {
+                        return <video src={apod.url} key={apod.title}/>;
+                    }
+                    return <img src={apod.hdurl} alt={apod.title} key={apod.title} />;
+                })}
             </Fragment>
         );
     }
