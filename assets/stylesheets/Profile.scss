@@ -1,12 +1,17 @@
 .profileCard {
     width: 18rem;
-
-text-align: center;
+    text-align: center;
+    margin-left: 15px;
 }
+
 .profileImage {
     padding-top: 10px;
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+}
+
+.profileSocial {
+    margin-left: 15px;
 }
