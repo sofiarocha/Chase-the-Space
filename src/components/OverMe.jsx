@@ -16,14 +16,11 @@ class OverMe extends Component {
         navigator.geolocation.getCurrentPosition((position) => {
             const lat = position.coords.latitude;
             const lon = position.coords.longitude;
-            console.log(lat);
-            
             const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
             const fetchUrl = `http://api.open-notify.org/iss-pass.json?lat=${lat}&lon=${lon}`;
             fetch(proxyUrl + fetchUrl)
                 .then(response => response.json()) 
                 .then(data => {
-                    console.log(data.response[0].risetime);
                     this.setState ({
                         passtime: data.response[0].risetime
                     });
