@@ -4,15 +4,24 @@ import Game from './Game';
 
 const Sidebar = () => {
     return (
-        <div className="container">
-            <div className="col-md-3 offset-md-9 align-self-end">
-                <br></br>
-                <OverMe />
-                <br></br>
-                <Game />
-            </div>
+        <div>
+            <br></br>
+            <OverMe />
+            <br></br>
+            <Game />
         </div>
+
     );
 };
 
 export default Sidebar;
+
+
+{/* <div className="container">
+<div className="col-md-3 offset-md-9 align-self-end">
+    <br></br>
+    <OverMe />
+    <br></br>
+    <Game />
+</div>
+</div> */}
