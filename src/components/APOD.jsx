@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import YouTube from 'react-youtube';
 import SideGallery from './SideGallery';
 
 class APOD extends Component {
@@ -33,12 +34,14 @@ class APOD extends Component {
 
     render () {
         const { pictureOfDay, moreInfo } = this.state;
+
         const podStyle = {
             background: `center / cover no-repeat url("${pictureOfDay.url}")`
         };
         return (
             <div className="apod-page">
                 <div className="pod" style={podStyle}>
+                    {pictureOfDay.media_type === "video" && <YouTube videoId={pictureOfDay.url.replace("https://www.youtube.com/embed/", "")} />}
                     <button onClick={this.handleClick} type="button">{moreInfo ? "Hide info" : "Show info"}</button>
                     {moreInfo
                     && <p>{pictureOfDay.explanation}</p>
