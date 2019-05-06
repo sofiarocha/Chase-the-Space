@@ -8,7 +8,7 @@ import App from './components/App';
 const root = document.getElementById('root');
 if (root) {
     ReactDOM.render(
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.HOME_URL}>
             <App />
         </BrowserRouter>, root
     );
