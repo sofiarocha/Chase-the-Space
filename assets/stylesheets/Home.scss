@@ -1,4 +1,4 @@
-.HomeComponent{
+.home-component{
     background-image: url(https://media.giphy.com/media/3o7aDcrsww5Ybp18hq/giphy.gif); 
     background-repeat: no-repeat;
     min-width: 100%;
@@ -19,12 +19,25 @@
 .section2 {
     height: 90vh;
     text-align: center;
+    margin-bottom: 20vh;
     .row {
         justify-content: space-evenly;
     }
+    a {
+        text-decoration: none;
+        color: #ffffff;
+    }
+}
+
+.card-image {
+    margin: 20px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 25vw;
+    height: 25vw;
     img {
         width: 100%;
-        border-radius: 50%;
+        height: 100%;
     }
 }
 

@@ -9,7 +9,7 @@ const cards = [
 
 const Home = () => {
     return (
-        <div className="container HomeComponent">
+        <div className="home-component">
             <div className="section1">
                 <TitleHomeContainer />
             </div>
