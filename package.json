@@ -35,7 +35,8 @@
     "react-dom": "^16.8.6",
     "react-images": "^0.5.19",
     "react-leaflet": "^2.2.1",
-    "react-router-dom": "^5.0.0"
+    "react-router-dom": "^5.0.0",
+    "react-youtube": "^7.9.0"
   },
   "scripts": {
     "start": "webpack-dev-server --mode development --env.ENVIRONMENT=development",
