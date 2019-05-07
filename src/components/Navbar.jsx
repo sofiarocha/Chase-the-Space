@@ -10,10 +10,7 @@ class Navbar extends Component {
         return (
             <div>
                 <nav className="navbar fixed-top navbar-expand-lg bg-dark nav-pills nav-justified">
-                <a className="navbar-brand text-white" href="/">
-                <img src="DarkPlanetIcon.jpg" width="50" height="50" className="d-inline-block" alt=""/>
-                ChaseTheSpace
-                </a>
+                <NavLink exact to="/" className="navbar-brand text-white"><img src="DarkPlanetIcon.jpg" width="50" height="50" className="d-inline-block" alt=""/>ChaseTheSpace</NavLink>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                       <span className="navbar-toggler-icon"></span>
                     </button>
