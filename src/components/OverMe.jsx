@@ -36,12 +36,18 @@ class OverMe extends Component {
         let time = new Date(milli);
         let hours = time.getHours();
         let minutes = time.getMinutes();
+        if(minutes <10){
+            return hours + ':'+ 0 + minutes;
+        }
+        if(hours < 10){
+            return hours + ':' + minutes + ' AM';
+        }
         return hours + ":" + minutes;
     }
             render(){
             return (
-                <div className="container">
-                    <h5>{`The next time the International Space Station will be over me will be at ${this.getMilli(this.state.passtime)} AM `}</h5>
+                <div className="container flex text">
+                    <h5>{`The next time the International Space Station will be over me will be at ${this.getMilli(this.state.passtime)}`}</h5>
                     <div className="fb-share-button" data-href="https://sofiarocha.github.io/iss" data-layout="box_count" data-size="small">
                         <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsofiarocha.github.io%2FChase-the-Space%2F&amp;src=sdkpreparse" className="fb-xfbml-parse-ignore">Share</a>
                     </div>
