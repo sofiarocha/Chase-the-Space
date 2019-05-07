@@ -58,7 +58,7 @@ class Game extends Component {
                     
                   }
                 </div>
-                <div className="container flex">
+                <div className="container gamething flex">
                     {this.state.astronauts.map(astronaut =>
                         <div>
                             <p key={astronaut.name}> <a href={`http://en.wikipedia.org/wiki/${astronaut.name}`} target="_blank" >{astronaut.name}</a></p>
