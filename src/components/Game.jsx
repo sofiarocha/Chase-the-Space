@@ -5,7 +5,9 @@ class Game extends Component {
     super(props);
     this.state = {
       number: 0,
-      astronauts: []
+      astronauts: [],
+      hasCorrectAnswer: false,
+      hasTried: false
     };
   }
   onGame() {
@@ -17,11 +19,11 @@ class Game extends Component {
         if (answerNumber === data.number){
             this.setState({
                 astronauts: data.people,
-                answer: true
+                hasCorrectAnswer: true
               });
         } else {
             this.setState({
-                answer: false
+                hasCorrectAnswer: false
               });
             }
     });
@@ -34,7 +36,10 @@ class Game extends Component {
     handleSubmit = (e) => {
       e.preventDefault();
       this.onGame();
-      this.setState({ astronauts: [] });
+      this.setState({ 
+        astronauts: [], 
+        hasTried: true 
+      });
     }
 
     render() {
@@ -49,7 +54,10 @@ class Game extends Component {
                     </div>
             </form>
             <div>
-                {this.state.answer ? <p className="green">Correct!</p> : <p className="red">Try again :(</p>}
+              { this.state.hasTried &&
+                (this.state.hasCorrectAnswer ? <p className="green"> Correct! </p> : <p className="red">Try again :(</p>)
+
+              }
             </div>
             <div className="container">
                 {this.state.astronauts.map(astronaut =>
