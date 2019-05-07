@@ -24,8 +24,8 @@ class NavigationBar extends Component {
                 </Navbar.Brand>
                   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                      <Nav className="mr-auto">
-                        <NavLink exact to="/" className="nav-link text-white">HOME</NavLink>
+                      <Nav className="mr-auto links">
+                        <NavLink exact to="/" className="nav-link text-white activeStyle">HOME</NavLink>
                         <NavLink to="/iss" className="nav-link text-white">ISS</NavLink>
                         <NavLink to="/apod" className="nav-link text-white">APOD</NavLink>
                       </Nav>
