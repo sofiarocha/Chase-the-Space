@@ -1,4 +1,5 @@
 import React, { Fragment, Component } from 'react';
+import YouTube from 'react-youtube';
 
 const getWeekDates = () => {
     const weekDays = [1, 2, 3, 4, 5, 6];
@@ -47,13 +48,20 @@ class SideGallery extends Component {
     }
 
     render () {
+        const opts = {
+            height: '16%',
+            width: '100%',
+            playerVars: {
+                autoplay: 1
+            }
+        };
         const { weekApod } = this.state;
         const weekApodOrder = this.orderByDays(weekApod);
         return (
             <Fragment>
                 {weekApodOrder.map((apod) => {
                     if (apod.media_type === "video") {
-                        return <video src={apod.url} key={apod.title}/>;
+                        return <YouTube videoId={apod.url.replace("https://www.youtube.com/embed/", "")} opts={opts} key={apod.title} />;
                     }
                     return <img src={apod.hdurl} alt={apod.title} key={apod.title} />;
                 })}

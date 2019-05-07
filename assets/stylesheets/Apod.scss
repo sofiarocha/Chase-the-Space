@@ -22,6 +22,12 @@ body {
         padding: 2vw;
         font-size: calc(8px + 0.5vw);
     }
+    :first-child {
+        height: 90%;
+    }
+    button {
+        margin: 0 auto;
+    }
 }
 
 .week-pictures {
