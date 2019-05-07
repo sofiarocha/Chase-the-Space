@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
+import { Map, Marker, TileLayer } from 'react-leaflet';
 import L from 'leaflet';
 
 
 const iconISS = L.icon({
-      iconUrl: "https://res.cloudinary.com/dl2ribpco/image/upload/v1557225295/ChaseTheSpace/iconISS_offev0.png",
-      iconSize: new L.Point(30, 35),
+      iconUrl: "https://res.cloudinary.com/dl2ribpco/image/upload/v1557235636/ChaseTheSpace/iconISS-flip_hiaznc.png",
+      iconSize: new L.Point(45, 50),
       className: 'leaflet-div-icon'
   });
 
@@ -17,7 +17,8 @@ class Leaflet extends Component {
             lat: 0,
             lng: 0,
             intervalId: undefined,
-            isLoaded: false
+            isLoaded: false,
+            zoom: '3'
         };
     }
 
@@ -35,11 +36,17 @@ class Leaflet extends Component {
 
     setTimer = () => {
         this.setState({
-                intervalId: interval
+            intervalId: interval
         });
         const interval = setInterval(this.getPosition, 10000);
     }
-   
+
+    handleZoom = (e) => {
+        this.setState({
+            zoom: e.target._zoom
+        })
+    }
+    
     componentDidMount = () => {
         this.setTimer();
         this.getPosition();
@@ -55,13 +62,18 @@ class Leaflet extends Component {
         const position = [this.state.lat, this.state.lng];
         if (!this.state.isLoaded) { return null };
         return (
-            <Map id="mapid" center={position} zoom='1'>
+            <Map 
+                id="mapid" 
+                center={position} 
+                zoom={this.state.zoom} 
+                zoomControl 
+                onZoomend={this.handleZoom} 
+            >
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap contributors</a>"
                 />
                 <Marker className="leaflet-div-icon" position={position} icon={ iconISS } >
-                    {/* <Popup></Popup> */}
                 </Marker> 
             </Map>
         )
