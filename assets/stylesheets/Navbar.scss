@@ -1,3 +1,18 @@
 .navbar{
     background-image: url(https://media.giphy.com/media/3ohhwNqFMnb7wZgNnq/giphy.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+a{
+        color: grey;
+        text-decoration: none
+}
+
+a:hover 
+{
+     color: grey; 
+     text-decoration:none; 
+     cursor:pointer;  
 }
