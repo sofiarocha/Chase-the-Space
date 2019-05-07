@@ -38,7 +38,7 @@ class Leaflet extends Component {
         this.setState({
             intervalId: interval
         });
-        const interval = setInterval(this.getPosition, 10000);
+        const interval = setInterval(this.getPosition, 1000);
     }
 
     handleZoom = (e) => {
