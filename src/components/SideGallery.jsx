@@ -48,13 +48,20 @@ class SideGallery extends Component {
     }
 
     render () {
+        const opts = {
+            height: '16%',
+            width: '100%',
+            playerVars: {
+                autoplay: 1
+            }
+        };
         const { weekApod } = this.state;
         const weekApodOrder = this.orderByDays(weekApod);
         return (
             <Fragment>
                 {weekApodOrder.map((apod) => {
                     if (apod.media_type === "video") {
-                        return <YouTube videoId={apod.url.replace("https://www.youtube.com/embed/", "")} key={apod.title} />;
+                        return <YouTube videoId={apod.url.replace("https://www.youtube.com/embed/", "")} opts={opts} key={apod.title} />;
                     }
                     return <img src={apod.hdurl} alt={apod.title} key={apod.title} />;
                 })}
