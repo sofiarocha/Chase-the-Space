@@ -5,7 +5,7 @@ import L from 'leaflet';
 
 const iconISS = L.icon({
       iconUrl: "https://res.cloudinary.com/dl2ribpco/image/upload/v1557225295/ChaseTheSpace/iconISS_offev0.png",
-      iconSize: new L.Point(30, 35),
+      iconSize: new L.Point(45, 50),
       className: 'leaflet-div-icon'
   });
 
@@ -55,7 +55,7 @@ class Leaflet extends Component {
         const position = [this.state.lat, this.state.lng];
         if (!this.state.isLoaded) { return null };
         return (
-            <Map id="mapid" center={position} zoom='1'>
+            <Map id="mapid" center={position} zoom = '3' >
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap contributors</a>"
