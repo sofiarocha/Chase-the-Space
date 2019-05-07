@@ -46,25 +46,25 @@ class Game extends Component {
       const { number } = this.state;
       return (
           <Fragment>
-            <form>
-                <h5>Guess how many people are in space</h5>
-                    <div className="flex">
-                        <input className="bar" type="number" value={number} min="0" onChange={this.handleChange} />
-                        <input className="button" type="submit" value="GO" onClick={this.handleSubmit} />
-                    </div>
-            </form>
-            <div>
-              { this.state.hasTried &&
-                (this.state.hasCorrectAnswer ? <p className="green"> Correct! </p> : <p className="red">Try again :(</p>)
-
-              }
-            </div>
-            <div className="container">
-                {this.state.astronauts.map(astronaut =>
-                    <div>
-                        <p key={astronaut.name}> <a href={`http://en.wikipedia.org/wiki/${astronaut.name}`} target="_blank" >{astronaut.name}</a></p>
-                    </div>
-                )}
+              <div className="flex">
+                <form>
+                    <h5>Guess how many people are in space</h5>
+                      <input className="bar" type="number" value={number} min="0" onChange={this.handleChange} />
+                      <input className="button" type="submit" value="GO" onClick={this.handleSubmit} />
+                </form>
+                <div>
+                  { this.state.hasTried &&
+                    (this.state.hasCorrectAnswer ? <p className="green"> Correct! </p> : <p className="red">Try again :(</p>)
+                    
+                  }
+                </div>
+                <div className="container flex">
+                    {this.state.astronauts.map(astronaut =>
+                        <div>
+                            <p key={astronaut.name}> <a href={`http://en.wikipedia.org/wiki/${astronaut.name}`} target="_blank" >{astronaut.name}</a></p>
+                        </div>
+                    )}
+                </div>
             </div>
         </Fragment>
       );
