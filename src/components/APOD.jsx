@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import YouTube from 'react-youtube';
 import SideGallery from './SideGallery';
 
 class APOD extends Component {
@@ -33,13 +34,36 @@ class APOD extends Component {
 
     render () {
         const { pictureOfDay, moreInfo } = this.state;
-        const podStyle = {
-            background: `center / cover no-repeat url(${pictureOfDay.url})`
+        const opts = {
+            height: '100%',
+            width: '100%',
         };
+        const podStyle = {
+            background: `center / cover no-repeat url("${pictureOfDay.url}")`
+        };
+        if (pictureOfDay.media_type === "video") {
+            return (
+                <div className="apod-page">
+                    <div className="pod">
+                        <YouTube videoId={pictureOfDay.url.replace("https://www.youtube.com/embed/", "")} opts={opts} />
+                        <button onClick={this.handleClick} type="button">
+                        {moreInfo ? <i className="fas fa-chevron-up">
+                        <br />Hide info</i> : <i className="fas fa-chevron-down"><br />Show info</i>}</button>
+                        {moreInfo
+                        && <p>{pictureOfDay.explanation}</p>
+                        }
+                    </div>
+                    <div className="week-pictures">
+                        <SideGallery />
+                    </div>
+                </div>
+            );
+        }
         return (
             <div className="apod-page">
                 <div className="pod" style={podStyle}>
-                    <button onClick={this.handleClick} type="button">{moreInfo ? "Hide info" : "Show info"}</button>
+                    <button onClick={this.handleClick} type="button">{moreInfo ? <i className="fas fa-chevron-up">
+                        <br />Hide info</i> : <i className="fas fa-chevron-down"><br />Show info</i>}</button>
                     {moreInfo
                     && <p>{pictureOfDay.explanation}</p>
                     }

@@ -4,7 +4,7 @@ body {
 
 .apod-page {
     display: flex;
-    height: 90vh;
+    height: 100vh;
 }
 
 .pod {
@@ -14,6 +14,12 @@ body {
         background-color: rgba(231, 225, 225, 0.35);
         padding: 2vw;
         font-size: calc(8px + 0.5vw);
+    }
+    :first-child {
+        height: 90%;
+    }
+    button {
+        margin: 0 auto;
     }
 }
 

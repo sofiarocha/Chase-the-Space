@@ -17,7 +17,6 @@ const App = () => {
                 <Route path="/iss" component={ISS} />
                 <Route path="/apod" component={APOD} />
                 <Route path="/about" component={AboutUs} />
-                
             </Switch>
             <Footer />
         </div>
