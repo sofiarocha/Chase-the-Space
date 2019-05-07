@@ -1,3 +1,35 @@
 .navbar{
-    background-image: url(https://media.giphy.com/media/3ohhwNqFMnb7wZgNnq/giphy.gif);
+    background-image: url(https://media3.giphy.com/media/gCUNAjq0nZzkk/giphy.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+.links{
+        .active {
+            background-color: rgba(111, 167, 150, 0.418);
+            border: none;
+            color: black;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+            border-radius: 16px;
+          }
+          
+          .active:hover {
+            background-color: #8eecdc56;
+          }
+}
+
+a{
+        color: white;
+        text-decoration: none
+}
+
+a:hover 
+{
+     color: grey; 
+     text-decoration:none; 
+     cursor:pointer;  
 }
