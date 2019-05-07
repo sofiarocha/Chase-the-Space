@@ -5,16 +5,19 @@ import Navbar from './Navbar';
 import Home from './Home';
 import ISS from './ISS';
 import APOD from './APOD';
+import AboutUs from './AboutUs';
 
 
 const App = () => {
     return (
-        <div className="container">
+        <div>
             <Navbar />
             <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/iss" component={ISS} />
                 <Route path="/apod" component={APOD} />
+                <Route path="/about" component={AboutUs} />
+                
             </Switch>
             <Footer />
         </div>
