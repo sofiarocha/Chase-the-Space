@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SideGallery from './SideGallery';
 
 class APOD extends Component {
     constructor(props) {
@@ -9,20 +10,19 @@ class APOD extends Component {
         };
     }
 
-    componentDidMount = () => {
-        this.onShowPictureOfDay();
-    }
-
     onShowPictureOfDay = () => {
         const apodUrl = "https://api.nasa.gov/planetary/apod?api_key=DV4ZLxIJ4QeI9eIXsHYlutwXWI8SwPNwRkbagwWt";
         fetch(apodUrl)
             .then(response => response.json())
             .then((data) => {
-                console.log(data);
                 this.setState({
                     pictureOfDay: data
                 });
             });
+    }
+
+    componentDidMount = () => {
+        this.onShowPictureOfDay();
     }
 
     handleClick = () => {
@@ -34,17 +34,18 @@ class APOD extends Component {
     render () {
         const { pictureOfDay, moreInfo } = this.state;
         const podStyle = {
-            background: `url(${pictureOfDay.url}) no-repeat 100%`,
+            background: `center / cover no-repeat url(${pictureOfDay.url})`
         };
         return (
-            <div className="container">
-                <div className="col-9">
-                    <div className="pod" style={podStyle}>
-                        <button onClick={this.handleClick} type="button">{moreInfo ? "Hide info" : "Show info"}</button>
-                        {moreInfo
-                        && <p>{pictureOfDay.explanation}</p>
-                        }
-                    </div>
+            <div className="apod-page">
+                <div className="pod" style={podStyle}>
+                    <button onClick={this.handleClick} type="button">{moreInfo ? "Hide info" : "Show info"}</button>
+                    {moreInfo
+                    && <p>{pictureOfDay.explanation}</p>
+                    }
+                </div>
+                <div className="week-pictures">
+                    <SideGallery />
                 </div>
             </div>
         );
