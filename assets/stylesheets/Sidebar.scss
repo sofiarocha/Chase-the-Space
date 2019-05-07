@@ -5,7 +5,6 @@
    flex-direction: column;
    align-items: center;
    text-align: center;
-   
 }
 
 .green{
@@ -27,4 +26,21 @@
 }
 .bar {
   border-radius: 8px;
+}
+
+.thing {
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  width: 250px;
+  height: auto;
+  // background: #b7612f;
+  background-image: url(https://www.solarsystemscope.com/textures/download/2k_stars_milky_way.jpg);
+  background-repeat: no-repeat;
+  box-shadow: 5px 5px 15px rgba(#4e6899, .9);
+  border-radius: 10px;
+}
+
+.text{
+  color:white;
 }

@@ -46,7 +46,7 @@ class Game extends Component {
       const { number } = this.state;
       return (
           <Fragment>
-              <div className="flex">
+              <div className="flex text">
                 <form>
                     <h5>Guess how many people are in space</h5>
                       <input className="bar" type="number" value={number} min="0" onChange={this.handleChange} />

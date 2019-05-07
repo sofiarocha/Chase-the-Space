@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import OverMe from './OverMe';
 import Game from './Game';
 
 const Sidebar = () => {
     return (
-        <div>
-            <br></br>
+        <Fragment>
+        <div className="thing">
             <OverMe />
-            <br></br>
+        </div>
+        <br></br>
+        <div className="thing">    
             <Game />
         </div>
+        </Fragment>
 
     );
 };
