@@ -13,9 +13,14 @@ class Home extends Component {
         this.myRef = React.createRef();
     }
 
-    scrollToMyRef = () => window.scrollTo(0, this.myRef.current.offsetTop);
+    scrollToMyRef = () => window.scrollTo({
+        left: 0,
+        top: this.myRef.current.offsetTop - 76,
+        behavior: "smooth"
+    });
 
     render() {
+        console.log(this.myRef);
         return (
             <div className="home-component">
                 <div className="section1">
