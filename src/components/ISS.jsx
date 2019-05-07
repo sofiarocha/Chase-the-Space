@@ -6,7 +6,7 @@ const ISS = () => {
     return (
         <div className="container issComponent">
             <div className="row">
-                <div className="col-6">
+                <div className="col-5 offset-1">
                     <Map />
                 </div>
                 <div className="col-3 offset-2">
