@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import YouTube from 'react-youtube';
 import SideGallery from './SideGallery';
+import MoreInfoButton from './MoreInfoButton';
 
 class APOD extends Component {
     constructor(props) {
@@ -46,12 +47,7 @@ class APOD extends Component {
                 <div className="apod-page">
                     <div className="pod">
                         <YouTube videoId={pictureOfDay.url.replace("https://www.youtube.com/embed/", "")} opts={opts} />
-                        <button onClick={this.handleClick} type="button">
-                        {moreInfo ? <i className="fas fa-chevron-up">
-                        <br />Hide info</i> : <i className="fas fa-chevron-down"><br />Show info</i>}</button>
-                        {moreInfo
-                        && <p>{pictureOfDay.explanation}</p>
-                        }
+                        <MoreInfoButton onMoreInfo={moreInfo} />
                     </div>
                     <div className="week-pictures">
                         <SideGallery />
@@ -62,11 +58,7 @@ class APOD extends Component {
         return (
             <div className="apod-page">
                 <div className="pod" style={podStyle}>
-                    <button onClick={this.handleClick} type="button">{moreInfo ? <i className="fas fa-chevron-up">
-                        <br />Hide info</i> : <i className="fas fa-chevron-down"><br />Show info</i>}</button>
-                    {moreInfo
-                    && <p>{pictureOfDay.explanation}</p>
-                    }
+                    <MoreInfoButton onMoreInfo={moreInfo} />
                 </div>
                 <div className="week-pictures">
                     <SideGallery />
