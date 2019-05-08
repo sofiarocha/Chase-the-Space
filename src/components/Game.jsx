@@ -12,7 +12,7 @@ class Game extends Component {
   }
   onGame() {
 
-    fetch("http://api.open-notify.org/astros.json")
+    fetch("https://cors-anywhere.herokuapp.com/http://api.open-notify.org/astros.json")
     .then(response => response.json()) // result conversion in JSON 
     .then(data => {
         const answerNumber = parseInt(this.state.number);
