@@ -20,7 +20,7 @@ class NavigationBar extends Component {
             <div>
               <Navbar collapseOnSelect fixed="top" expand="lg" bg="dark" variant="dark">
                 <Navbar.Brand> 
-                  <NavLink exact to="/" className="navbar-brand text-white"><img src="DarkPlanetIcon.jpg" width="50" height="50" className="d-inline-block" alt=""/>ChaseTheSpace</NavLink>
+                  <NavLink exact to="/" className="navbar-brand text-white"><img src="https://www.pngkey.com/png/full/15-154688_black-hole-smash-ultimate-circle.png" width="50" height="50" className="d-inline-block" alt=""/>ChaseTheSpace</NavLink>
                 </Navbar.Brand>
                   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">

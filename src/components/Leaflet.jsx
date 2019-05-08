@@ -16,9 +16,11 @@ class Leaflet extends Component {
         this.state = {
             lat: 0,
             lng: 0,
+            centerLat: 0,
+            centerLng: 0,
             intervalId: undefined,
             isLoaded: false,
-            zoom: '3'
+            zoom: '1'
         };
     }
 
@@ -64,9 +66,9 @@ class Leaflet extends Component {
         return (
             <Map 
                 id="mapid" 
-                center={position} 
+                center={[this.state.centerLat, this.state.centerLng]} 
                 zoom={this.state.zoom} 
-                zoomControl 
+                zoomControl={true}
                 onZoomend={this.handleZoom} 
             >
                 <TileLayer
