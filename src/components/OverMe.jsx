@@ -47,7 +47,7 @@ class OverMe extends Component {
             render(){
             return (
                 <div className="container flex text">
-                    <h5>{`The next time the International Space Station will be over me will be at ${this.getMilli(this.state.passtime)} UTC time`}</h5>
+                    <p>The next time the International Space Station will be over me will be at <span className="time">{this.getMilli(this.state.passtime)}</span></p>
                     <div className="fb-share-button gamething" data-href="https://sofiarocha.github.io/Chase-the-Space/iss" data-layout="box_count" data-size="small">
                         <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsofiarocha.github.io%2FChase-the-Space%2F&amp;src=sdkpreparse" className="fb-xfbml-parse-ignore">Share</a>
                     </div>
