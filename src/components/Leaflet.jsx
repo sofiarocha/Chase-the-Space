@@ -65,6 +65,7 @@ class Leaflet extends Component {
         if (!this.state.isLoaded) { return null };
         return (
             <Map 
+                className="mapsizing"
                 id="mapid" 
                 center={[this.state.centerLat, this.state.centerLng]} 
                 zoom={this.state.zoom} 
