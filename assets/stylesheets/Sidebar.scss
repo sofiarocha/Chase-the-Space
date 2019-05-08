@@ -37,8 +37,14 @@
   // background: #b7612f;
   background-image: url(https://www.solarsystemscope.com/textures/download/2k_stars_milky_way.jpg);
   background-repeat: no-repeat;
-  box-shadow: 5px 5px 15px rgba(#313031, .9);
+  box-shadow: 15px 15px 15px rgba(#313031, .9);
   border-radius: 10px;
+  h5{
+    padding-top: 10px;
+  }
+  .gamething{
+    padding-bottom: 20px;
+  }
 }
 
 .text{

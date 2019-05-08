@@ -16,22 +16,24 @@ class Leaflet extends Component {
         this.state = {
             lat: 0,
             lng: 0,
+            centerLat: 0,
+            centerLng: 0,
             intervalId: undefined,
             isLoaded: false,
-            zoom: '3'
+            zoom: '1'
         };
     }
 
     getPosition = () => {
-        fetch("http://api.open-notify.org/iss-now.json")
-            .then(response => response.json()) 
-            .then(data => {
-                this.setState ({
-                    lat: data.iss_position.latitude,
-                    lng: data.iss_position.longitude,
-                    isLoaded: true
-                });
-        });
+        fetch("https://cors-anywhere.herokuapp.com/http://api.open-notify.org/iss-now.json")
+                .then(response => response.json()) 
+                .then(data => {
+                    this.setState ({
+                        lat: data.iss_position.latitude,
+                        lng: data.iss_position.longitude,
+                        isLoaded: true
+                    });
+            });
     }
 
     setTimer = () => {
@@ -64,9 +66,9 @@ class Leaflet extends Component {
         return (
             <Map 
                 id="mapid" 
-                center={position} 
+                center={[this.state.centerLat, this.state.centerLng]} 
                 zoom={this.state.zoom} 
-                zoomControl 
+                zoomControl={true}
                 onZoomend={this.handleZoom} 
             >
                 <TileLayer

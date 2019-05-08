@@ -12,7 +12,7 @@ class Game extends Component {
   }
   onGame() {
 
-    fetch("http://api.open-notify.org/astros.json")
+    fetch("https://cors-anywhere.herokuapp.com/http://api.open-notify.org/astros.json")
     .then(response => response.json()) // result conversion in JSON 
     .then(data => {
         const answerNumber = parseInt(this.state.number);
@@ -58,7 +58,7 @@ class Game extends Component {
                     
                   }
                 </div>
-                <div className="container flex">
+                <div className="container gamething flex">
                     {this.state.astronauts.map(astronaut =>
                         <div>
                             <p key={astronaut.name}> <a href={`http://en.wikipedia.org/wiki/${astronaut.name}`} target="_blank" >{astronaut.name}</a></p>

@@ -7,8 +7,7 @@ class APOD extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            pictureOfDay: {},
-            moreInfo: false
+            pictureOfDay: {}
         };
     }
 
@@ -27,38 +26,26 @@ class APOD extends Component {
         this.onShowPictureOfDay();
     }
 
-    handleClick = () => {
-        this.setState((state) => {
-            return { moreInfo: !state.moreInfo };
-        });
-    }
-
     render () {
-        const { pictureOfDay, moreInfo } = this.state;
+        const { pictureOfDay } = this.state;
         const opts = {
             height: '100%',
             width: '100%',
         };
         const podStyle = {
-            background: `center / cover no-repeat url("${pictureOfDay.url}")`
+            background: `center / contain no-repeat url("${pictureOfDay.url}")`
         };
-        if (pictureOfDay.media_type === "video") {
-            return (
-                <div className="apod-page">
-                    <div className="pod">
-                        <YouTube videoId={pictureOfDay.url.replace("https://www.youtube.com/embed/", "")} opts={opts} />
-                        <MoreInfoButton onMoreInfo={moreInfo} />
-                    </div>
-                    <div className="week-pictures">
-                        <SideGallery />
-                    </div>
-                </div>
-            );
-        }
         return (
             <div className="apod-page">
-                <div className="pod" style={podStyle}>
-                    <MoreInfoButton onMoreInfo={moreInfo} />
+                <div className="pod">
+                    {pictureOfDay.media_type === "video"
+                        ? (
+                            <div className="video-pod">
+                                <YouTube videoId={pictureOfDay.url.replace("https://www.youtube.com/embed/", "")} opts={opts} />
+                            </div>
+                        )
+                        : <div className="image-pod" style={podStyle} /> }
+                    <MoreInfoButton pod={pictureOfDay} />
                 </div>
                 <div className="week-pictures">
                     <SideGallery />

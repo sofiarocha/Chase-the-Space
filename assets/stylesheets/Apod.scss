@@ -15,18 +15,27 @@ body {
 }
 
 .pod {
-    height: 100%;
     width: 70%;
+    display: flex;
+    flex-direction: column;
     p {
-        background-color: rgba(231, 225, 225, 0.35);
+        background-color: rgba(14, 8, 8, 0.548);
+        color: rgb(224, 221, 221);
         padding: 2vw;
         font-size: calc(8px + 0.5vw);
     }
+}
+
+.image-pod {
+    height: 100%;
+    width: 100%;
+}
+
+.video-pod {
+    height: 100%;
+    width: 100%;
     :first-child {
         height: 90%;
-    }
-    button {
-        margin: 0 auto;
     }
 }
 
