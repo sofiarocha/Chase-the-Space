@@ -20,7 +20,6 @@ class Home extends Component {
     });
 
     render() {
-        console.log(this.myRef);
         return (
             <div className="home-component">
                 <div className="section1">
