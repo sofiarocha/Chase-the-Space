@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React, { Component } from 'react';
 import YouTube from 'react-youtube';
 import SideGallery from './SideGallery';
@@ -44,11 +45,15 @@ class APOD extends Component {
         if (pictureOfDay.media_type === "video") {
             return (
                 <div className="apod-page">
-                    <div className="pod">
+                    <div className="video-pod">
                         <YouTube videoId={pictureOfDay.url.replace("https://www.youtube.com/embed/", "")} opts={opts} />
                         <button onClick={this.handleClick} type="button">
-                        {moreInfo ? <i className="fas fa-chevron-up">
-                        <br />Hide info</i> : <i className="fas fa-chevron-down"><br />Show info</i>}</button>
+                            {
+                                moreInfo
+                                    ? <i className="fas fa-chevron-up"><br />Hide info</i>
+                                    : <i className="fas fa-chevron-down"><br />Show info</i>
+                            }
+                        </button>
                         {moreInfo
                         && <p>{pictureOfDay.explanation}</p>
                         }
@@ -62,8 +67,10 @@ class APOD extends Component {
         return (
             <div className="apod-page">
                 <div className="pod" style={podStyle}>
-                    <button onClick={this.handleClick} type="button">{moreInfo ? <i className="fas fa-chevron-up">
-                        <br />Hide info</i> : <i className="fas fa-chevron-down"><br />Show info</i>}</button>
+                    <button onClick={this.handleClick} type="button">
+                        {moreInfo ? <i className="fas fa-chevron-up">
+                        <br />Hide info</i> : <i className="fas fa-chevron-down"><br />Show info</i>}
+                    </button>
                     {moreInfo
                     && <p>{pictureOfDay.explanation}</p>
                     }
