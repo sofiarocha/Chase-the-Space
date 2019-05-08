@@ -7,11 +7,12 @@ class Game extends Component {
       number: 0,
       astronauts: [],
       hasCorrectAnswer: false,
-      hasTried: false
+      hasTried: false,
+      isLoading: false
     };
   }
+  
   onGame() {
-
     fetch("https://cors-anywhere.herokuapp.com/http://api.open-notify.org/astros.json")
     .then(response => response.json()) // result conversion in JSON 
     .then(data => {
@@ -19,11 +20,13 @@ class Game extends Component {
         if (answerNumber === data.number){
             this.setState({
                 astronauts: data.people,
-                hasCorrectAnswer: true
+                hasCorrectAnswer: true,
+                isLoading: false
               });
         } else {
             this.setState({
-                hasCorrectAnswer: false
+                hasCorrectAnswer: false,
+                isLoading: false
               });
             }
     });
@@ -38,7 +41,8 @@ class Game extends Component {
       this.onGame();
       this.setState({ 
         astronauts: [], 
-        hasTried: true 
+        hasTried: true,
+        isLoading: true
       });
     }
 
@@ -53,10 +57,11 @@ class Game extends Component {
                       <input className="button" type="submit" value="GO" onClick={this.handleSubmit} />
                 </form>
                 <div>
-                  { this.state.hasTried &&
-                    (this.state.hasCorrectAnswer ? <p className="green"> Correct! </p> : <p className="red">Try again :(</p>)
-                    
-                  }
+                  {this.state.isLoading && <p> loading...</p> }
+                
+                  { this.state.hasTried && !this.state.isLoading &&
+                    (this.state.hasCorrectAnswer ? <p className="green"> Correct! </p> : <p className="red">Try again :(</p>)}
+                  
                 </div>
                 <div className="container gamething flex">
                     {this.state.astronauts.map(astronaut =>
