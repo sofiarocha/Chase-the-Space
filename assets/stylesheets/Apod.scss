@@ -5,7 +5,7 @@ body {
 
 .apod-page {
     display: flex;
-    height: 90vh;
+    height: 77.4vh;
     background-image: url(https://www.solarsystemscope.com/textures/download/2k_stars_milky_way.jpg); 
     background-repeat: no-repeat;
     min-width: 100%;
@@ -15,7 +15,7 @@ body {
 }
 
 .pod {
-    width: 70%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     p {
@@ -42,8 +42,8 @@ body {
 .week-pictures {
     height: 100%;
     width: 20%;
+    overflow-y: scroll;
     img {
         width: 100%;
-        height: 16%;
     }
 }
