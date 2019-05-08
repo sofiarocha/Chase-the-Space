@@ -18,7 +18,7 @@ class Leaflet extends Component {
             lng: 0,
             intervalId: undefined,
             isLoaded: false,
-            zoom: '3'
+            zoom: '1'
         };
     }
 
