@@ -8,7 +8,6 @@ const opts = {
 };
 
 const SelectedPod = ({ selectedPod }) => {
-    console.log(selectedPod);
     const podStyle = {
         background: `center / contain no-repeat url("${selectedPod.url}")`
     };

@@ -59,7 +59,11 @@ class APOD extends Component {
             <div className="apod-page">
                 <SelectedPod selectedPod={selectedPod} />
                 <div className="week-pictures">
-                    <SideGallery weekApod={weekApod} handleCkickPod={this.onMarkAsClick} />
+                    <SideGallery
+                        weekApod={weekApod}
+                        selectedPod={selectedPod}
+                        handleCkickPod={this.onMarkAsClick}
+                    />
                 </div>
             </div>
         );

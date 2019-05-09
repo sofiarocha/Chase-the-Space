@@ -7,16 +7,19 @@ const orderByDays = (arr) => {
     });
 };
 
-const SideGallery = ({ weekApod, handleCkickPod }) => {
+const SideGallery = ({ weekApod, handleCkickPod, selectedPod }) => {
     const weekApodOrder = orderByDays(weekApod);
     return (
         <Fragment>
             {weekApodOrder.map(apod => (
-                <Pod
-                    apod={apod}
-                    handleCkickPod={handleCkickPod}
-                    key={apod.title}
-                />
+                (apod.date !== selectedPod.date)
+                && (
+                    <Pod
+                        apod={apod}
+                        handleCkickPod={handleCkickPod}
+                        key={apod.title}
+                    />
+                )
             ))}
         </Fragment>
     );
