@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Leaflet from './Leaflet';
 import Sidebar from './Sidebar';
-import SelectedMap from './SelectedMap';
 import MapList from './MapList';
 
 const availableMaps = [
