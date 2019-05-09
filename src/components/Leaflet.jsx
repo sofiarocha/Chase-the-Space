@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Map, Marker, TileLayer } from 'react-leaflet';
 import L from 'leaflet';
+import { ClapSpinner } from 'react-spinners-kit';
 
 
 const iconISS = L.icon({
@@ -20,7 +21,8 @@ class Leaflet extends Component {
             centerLng: 0,
             intervalId: undefined,
             isLoaded: false,
-            zoom: '1'
+            zoom: '1',
+            isLoading: true
         };
     }
 
@@ -31,7 +33,7 @@ class Leaflet extends Component {
                     this.setState ({
                         lat: data.iss_position.latitude,
                         lng: data.iss_position.longitude,
-                        isLoaded: true
+                        isLoaded: true,
                     });
             });
     }
@@ -63,8 +65,18 @@ class Leaflet extends Component {
     render() {
         const position = [this.state.lat, this.state.lng];
         const { tileLayer } = this.props;
-        console.log(tileLayer);
-        if (!this.state.isLoaded) { return null };
+
+        //show spinner while the map is loading//
+        if (!this.state.isLoaded) { 
+            return(
+                <div className="spinner">
+                     <ClapSpinner
+                        size={50}
+                        color="#686769"
+                    /> 
+                </div>
+            )
+         };
         return (
             <Map 
                 className="mapsizing"

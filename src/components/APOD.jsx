@@ -62,15 +62,19 @@ class APOD extends Component {
 
     render () {
         const { selectedPod, weekApod } = this.state;
+
+        if(this.state.isLoading) {
+            return (
+                <div className="spinner">
+                     <ClapSpinner
+                        size={50}
+                        color="#686769"
+                    /> 
+                </div>
+            )
+        }
         return (
             <div className="apod-page">
-                <div className="spinner">
-                            {this.state.isLoading && <ClapSpinner
-                                size={50}
-                                color="#686769"
-                                loading={this.state.isLoading}
-                            /> }
-                            </div>
                 <SelectedPod selectedPod={selectedPod} />
                 <div className="week-pictures">
                     <SideGallery
