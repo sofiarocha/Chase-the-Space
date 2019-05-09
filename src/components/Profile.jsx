@@ -11,14 +11,14 @@ const Profile = (props) => {
                 <h5 className="card-title">{props.name}</h5>
                 <p className="card-text">{props.description}</p>
                 <a target="_blank" href={props.github}>
-                    <i className="fab fa-github-square"></i>
+                    <i className="fab fa-github-square fa-lg"></i>
                 </a>
                 <a className="profileSocial" target="_blank"  href={props.linkedin}>
-                    <i className="fab fa-linkedin-in"></i>
+                    <i className="fab fa-linkedin-in fa-lg"></i>
                 </a>
             </div>
         </div>
     )
-}
+} 
 export default Profile;
 
