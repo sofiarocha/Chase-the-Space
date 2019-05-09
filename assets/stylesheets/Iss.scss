@@ -1,12 +1,37 @@
+body {
+    padding-top: 86px;
+    
+  }
+
 .issComponent {
-    display:flex;
-    padding-top:70px;
+    display: flex;
+    height: auto;
     background-image: url(https://www.solarsystemscope.com/textures/download/2k_stars_milky_way.jpg); 
     background-repeat: no-repeat;
     min-width: 100%;
     min-height: 100%;
     background-size: cover;
     overflow: hidden;
-    color: white;
-    
+    justify-content: space-around;
+}
+
+.map-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    p {
+        color: white;
+        padding: 2vw;
+    }
+    #mapid{
+        width:100%;
+    }
+}
+
+
+.sidebar-container {
+    height: 100%;
+    width: 20%;
+    padding-top: 4vw;
+    padding-bottom: 2vw;
 }

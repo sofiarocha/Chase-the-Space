@@ -25,15 +25,15 @@ class Leaflet extends Component {
     }
 
     getPosition = () => {
-        fetch("http://api.open-notify.org/iss-now.json")
-            .then(response => response.json()) 
-            .then(data => {
-                this.setState ({
-                    lat: data.iss_position.latitude,
-                    lng: data.iss_position.longitude,
-                    isLoaded: true
-                });
-        });
+        fetch("https://cors-anywhere.herokuapp.com/http://api.open-notify.org/iss-now.json")
+                .then(response => response.json()) 
+                .then(data => {
+                    this.setState ({
+                        lat: data.iss_position.latitude,
+                        lng: data.iss_position.longitude,
+                        isLoaded: true
+                    });
+            });
     }
 
     setTimer = () => {
@@ -67,6 +67,7 @@ class Leaflet extends Component {
         if (!this.state.isLoaded) { return null };
         return (
             <Map 
+                className="mapsizing"
                 id="mapid" 
                 center={[this.state.centerLat, this.state.centerLng]} 
                 zoom={this.state.zoom} 
