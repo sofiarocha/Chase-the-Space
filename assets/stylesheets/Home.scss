@@ -6,7 +6,7 @@
     background-size: cover;
     overflow: hidden;
     color: white;
-
+    
 }
 .section1 {
     display: flex;
@@ -14,6 +14,12 @@
     height: 85vh;
     text-align: center;
     justify-content: flex-end;
+    .carl{
+        margin:0;
+        text-align: center;
+        font-size: 1em;
+        font-style: italic;
+        }
     .scroller {
         display: flex;
         height: 42%;
