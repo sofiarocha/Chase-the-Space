@@ -62,9 +62,12 @@ class Leaflet extends Component {
 
     render() {
         const position = [this.state.lat, this.state.lng];
+        const { tileLayer } = this.props;
+        console.log(tileLayer);
         if (!this.state.isLoaded) { return null };
         return (
             <Map 
+                className="mapsizing"
                 id="mapid" 
                 center={[this.state.centerLat, this.state.centerLng]} 
                 zoom={this.state.zoom} 
@@ -72,7 +75,7 @@ class Leaflet extends Component {
                 onZoomend={this.handleZoom} 
             >
                 <TileLayer
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    url={ tileLayer }
                     attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap contributors</a>"
                 />
                 <Marker className="leaflet-div-icon" position={position} icon={ iconISS } >
