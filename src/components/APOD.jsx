@@ -1,54 +1,69 @@
 import React, { Component } from 'react';
-import YouTube from 'react-youtube';
 import SideGallery from './SideGallery';
-import MoreInfoButton from './MoreInfoButton';
+import DateUtility from './DateUtility';
+import SelectedPod from './SelectedPod';
+
+const today = new Date();
+const getWeekDates = () => {
+    const weekDays = [0, 1, 2, 3, 4, 5, 6];
+    const todayDay = today.getTime();
+    const weekDaysDate = weekDays.map((day) => {
+        const week = (todayDay - day * 24 * 60 * 60 * 1000);
+        return new DateUtility(new Date(week)).formatedDate();
+    });
+    return weekDaysDate;
+};
 
 class APOD extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            pictureOfDay: {}
+            selectedPod: {},
+            weekApod: []
         };
     }
 
-    onShowPictureOfDay = () => {
-        const apodUrl = "https://api.nasa.gov/planetary/apod?api_key=DV4ZLxIJ4QeI9eIXsHYlutwXWI8SwPNwRkbagwWt";
-        fetch(apodUrl)
-            .then(response => response.json())
-            .then((data) => {
-                this.setState({
-                    pictureOfDay: data
+    onShowWeekGallery = () => {
+        getWeekDates().forEach((date) => {
+            const dayUrl = `https://api.nasa.gov/planetary/apod?date=${date}&api_key=DV4ZLxIJ4QeI9eIXsHYlutwXWI8SwPNwRkbagwWt`;
+            fetch(dayUrl)
+                .then(response => response.json())
+                .then((data) => {
+                    this.setState((state) => {
+                        return {
+                            weekApod: [...state.weekApod, data]
+                        };
+                    });
+                    if (data.date === new DateUtility(today).formatedDate()) {
+                        this.setState({ selectedPod: data });
+                    }
                 });
-            });
+        });
     }
 
     componentDidMount = () => {
-        this.onShowPictureOfDay();
+        this.onShowWeekGallery();
+    }
+
+    shouldComponentUpdate = (nextProps, nextState) => {
+        return nextState.weekApod.length === 7;
+    }
+
+    onMarkAsClick = (selectedPod) => {
+        this.setState({ selectedPod });
     }
 
     render () {
-        const { pictureOfDay } = this.state;
-        const opts = {
-            height: '100%',
-            width: '100%',
-        };
-        const podStyle = {
-            background: `center / contain no-repeat url("${pictureOfDay.url}")`
-        };
+        const { selectedPod, weekApod } = this.state;
         return (
             <div className="apod-page">
-                <div className="pod">
-                    {pictureOfDay.media_type === "video"
-                        ? (
-                            <div className="video-pod">
-                                <YouTube videoId={pictureOfDay.url.replace("https://www.youtube.com/embed/", "")} opts={opts} />
-                            </div>
-                        )
-                        : <div className="image-pod" style={podStyle} /> }
-                    <MoreInfoButton pod={pictureOfDay} />
-                </div>
+                <SelectedPod selectedPod={selectedPod} />
                 <div className="week-pictures">
-                    <SideGallery />
+                    <SideGallery
+                        weekApod={weekApod}
+                        selectedPod={selectedPod}
+                        handleCkickPod={this.onMarkAsClick}
+                    />
                 </div>
             </div>
         );
