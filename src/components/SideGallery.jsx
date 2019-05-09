@@ -1,40 +1,25 @@
-import React, { Fragment, Component } from 'react';
-import YouTube from 'react-youtube';
+import React, { Fragment } from 'react';
+import Pod from './Pod';
 
-class SideGallery extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            weekApod: []
-        };
-    }
+const orderByDays = (arr) => {
+    return arr.sort((a, b) => {
+        return new Date(b.date) - new Date(a.date);
+    });
+};
 
-    orderByDays = (arr) => {
-        return arr.sort((a, b) => {
-            return new Date(b.date) - new Date(a.date);
-        });
-    }
-
-    render () {
-        const opts = {
-            width: '100%',
-            playerVars: {
-                autoplay: 1
-            }
-        };
-        const { weekApod } = this.props;
-        const weekApodOrder = this.orderByDays(weekApod);
-        return (
-            <Fragment>
-                {weekApodOrder.map((apod) => {
-                    if (apod.media_type === "video") {
-                        return <YouTube videoId={apod.url.replace("https://www.youtube.com/embed/", "")} opts={opts} key={apod.title} />;
-                    }
-                    return <img src={apod.hdurl} alt={apod.title} key={apod.title} />;
-                })}
-            </Fragment>
-        );
-    }
-}
+const SideGallery = ({ weekApod, handleCkickPod }) => {
+    const weekApodOrder = orderByDays(weekApod);
+    return (
+        <Fragment>
+            {weekApodOrder.map(apod => (
+                <Pod
+                    apod={apod}
+                    handleCkickPod={handleCkickPod}
+                    key={apod.title}
+                />
+            ))}
+        </Fragment>
+    );
+};
 
 export default SideGallery;

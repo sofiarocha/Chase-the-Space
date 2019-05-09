@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import YouTube from 'react-youtube';
 import SideGallery from './SideGallery';
 import MoreInfoButton from './MoreInfoButton';
+import DateUtility from './DateUtility';
 
+const today = new Date();
 const getWeekDates = () => {
     const weekDays = [0, 1, 2, 3, 4, 5, 6];
-    const today = new Date();
     const todayDay = today.getTime();
     const weekDaysDate = weekDays.map((day) => {
         const week = (todayDay - day * 24 * 60 * 60 * 1000);
-        return `${new Date(week).getFullYear()}-${new Date(week).getMonth() + 1}-${new Date(week).getDate()}`;
+        return new DateUtility(new Date(week)).formatedDate();
     });
     return weekDaysDate;
 };
@@ -31,11 +32,12 @@ class APOD extends Component {
                 .then((data) => {
                     this.setState((state) => {
                         return {
-                            weekApod: [...state.weekApod, data],
-                            selectedPod: state.weekApod[0]
+                            weekApod: [...state.weekApod, data]
                         };
                     });
-                    //do a new setState for selected Pod if date = today date
+                    if (data.date === new DateUtility(today).formatedDate()) {
+                        this.setState({ selectedPod: data });
+                    }
                 });
         });
     }
@@ -46,6 +48,10 @@ class APOD extends Component {
 
     shouldComponentUpdate = (nextProps, nextState) => {
         return nextState.weekApod.length === 7;
+    }
+
+    onMarkAsClick = (podSelected) => {
+        console.log(podSelected);
     }
 
     render () {
@@ -70,7 +76,7 @@ class APOD extends Component {
                     <MoreInfoButton pod={selectedPod} />
                 </div>
                 <div className="week-pictures">
-                    <SideGallery weekApod={weekApod} />
+                    <SideGallery weekApod={weekApod} handleCkickPod={this.onMarkAsClick} />
                 </div>
             </div>
         );
