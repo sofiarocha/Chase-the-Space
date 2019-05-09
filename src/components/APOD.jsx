@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { ClapSpinner } from "react-spinners-kit";
 import SideGallery from './SideGallery';
 import DateUtility from './DateUtility';
 import SelectedPod from './SelectedPod';
@@ -14,12 +15,14 @@ const getWeekDates = () => {
     return weekDaysDate;
 };
 
+
 class APOD extends Component {
     constructor(props) {
         super(props);
         this.state = {
             selectedPod: {},
-            weekApod: []
+            weekApod: [],
+            isLoading: true
         };
     }
 
@@ -31,7 +34,8 @@ class APOD extends Component {
                 .then((data) => {
                     this.setState((state) => {
                         return {
-                            weekApod: [...state.weekApod, data]
+                            weekApod: [...state.weekApod, data],
+                            isLoading: false
                         };
                     });
                     if (data.date === new DateUtility(today).formatedDate()) {
@@ -43,6 +47,9 @@ class APOD extends Component {
 
     componentDidMount = () => {
         this.onShowWeekGallery();
+        this.setState({
+            isLoading: true
+        });
     }
 
     shouldComponentUpdate = (nextProps, nextState) => {
@@ -57,6 +64,13 @@ class APOD extends Component {
         const { selectedPod, weekApod } = this.state;
         return (
             <div className="apod-page">
+                <div className="spinner">
+                            {this.state.isLoading && <ClapSpinner
+                                size={50}
+                                color="#686769"
+                                loading={this.state.isLoading}
+                            /> }
+                            </div>
                 <SelectedPod selectedPod={selectedPod} />
                 <div className="week-pictures">
                     <SideGallery
