@@ -16,6 +16,10 @@ const availableMaps = [
     {
         src:"https://res.cloudinary.com/dl2ribpco/image/upload/v1557343515/ChaseTheSpace/Sem_T%C3%ADtulo3_cyuj4k.png",
         tileLayer:"https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"
+    },
+    {
+        src:"https://res.cloudinary.com/dl2ribpco/image/upload/v1557408278/ChaseTheSpace/Screenshot_from_2019-05-09_14-22-33_kus14z.png",
+        tileLayer:"https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg"
     }
 ]
 
@@ -40,8 +44,10 @@ class ISS extends Component {
         const { selectedMap, maps } = this.state;
         return (
             <div className="container issComponent">
-                <div className="map-container">
+                <div className="maplist-container">
                     <MapList maps={maps} onClickedMap={this.onClickedMap}/>
+                </div>
+                <div className="map-container">
                     <p>The International Space Station is moving at close to 28,000 Km/h. It circles the Earth in roughly 92 minutes and completes 15.5 orbits per day.
                     Where is it right now?</p>
                     <Leaflet tileLayer={selectedMap.tileLayer}/>

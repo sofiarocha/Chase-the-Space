@@ -5,7 +5,7 @@ body {
 
 .issComponent {
     display: flex;
-    height: auto;
+    height: 79.5vh;
     background-image: url(https://www.solarsystemscope.com/textures/download/2k_stars_milky_way.jpg); 
     background-repeat: no-repeat;
     min-width: 100%;
@@ -34,4 +34,18 @@ body {
     width: 20%;
     padding-top: 4vw;
     padding-bottom: 2vw;
+}
+
+.maplist-container {
+    display:flex;
+    flex-direction: column;
+    width:9%;
+    padding-top: 3vw;
+    padding-bottom: 2vw;
+    img {
+        width:100%;
+        border-radius: 50%;
+       
+    }
+    
 }
