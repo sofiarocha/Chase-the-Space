@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import YouTube from 'react-youtube';
 import SideGallery from './SideGallery';
-import MoreInfoButton from './MoreInfoButton';
 import DateUtility from './DateUtility';
+import SelectedPod from './SelectedPod';
 
 const today = new Date();
 const getWeekDates = () => {
@@ -50,31 +49,15 @@ class APOD extends Component {
         return nextState.weekApod.length === 7;
     }
 
-    onMarkAsClick = (podSelected) => {
-        console.log(podSelected);
+    onMarkAsClick = (selectedPod) => {
+        this.setState({ selectedPod });
     }
 
     render () {
         const { selectedPod, weekApod } = this.state;
-        const opts = {
-            height: '100%',
-            width: '100%',
-        };
-        const podStyle = {
-            background: `center / contain no-repeat url("${selectedPod.url}")`
-        };
         return (
             <div className="apod-page">
-                <div className="pod">
-                    {selectedPod.media_type === "video"
-                        ? (
-                            <div className="video-pod">
-                                <YouTube videoId={selectedPod.url.replace("https://www.youtube.com/embed/", "")} opts={opts} />
-                            </div>
-                        )
-                        : <div className="image-pod" style={podStyle} /> }
-                    <MoreInfoButton pod={selectedPod} />
-                </div>
+                <SelectedPod selectedPod={selectedPod} />
                 <div className="week-pictures">
                     <SideGallery weekApod={weekApod} handleCkickPod={this.onMarkAsClick} />
                 </div>
