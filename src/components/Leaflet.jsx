@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { Map, Marker, TileLayer } from 'react-leaflet';
 import L from 'leaflet';
 import { ClapSpinner } from 'react-spinners-kit';
@@ -21,8 +21,7 @@ class Leaflet extends Component {
             centerLng: 0,
             intervalId: undefined,
             isLoaded: false,
-            zoom: '1',
-            isLoading: true
+            zoom: '1'
         };
     }
 
@@ -39,10 +38,10 @@ class Leaflet extends Component {
     }
 
     setTimer = () => {
+        const interval = setInterval(this.getPosition, 10000);
         this.setState({
             intervalId: interval
         });
-        const interval = setInterval(this.getPosition, 10000);
     }
 
     handleZoom = (e) => {

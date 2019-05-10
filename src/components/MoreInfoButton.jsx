@@ -37,7 +37,11 @@ class MoreInfoButton extends Component {
                 {onMoreInfo
                     && (
                         <p>
-                            {pod.date} - {pod.title}
+                            {pod.date}
+                            {' '}
+                            -
+                            {' '}
+                            {pod.title}
                             <br />
                             {pod.explanation}
                         </p>

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { Component } from 'react';
 import Leaflet from './Leaflet';
 import Sidebar from './Sidebar';
@@ -5,7 +6,7 @@ import MapList from './MapList';
 
 const availableMaps = [
     {
-        src: "https://res.cloudinary.com/dl2ribpco/image/upload/v1557425121/ChaseTheSpace/template_primary1_iqxyxa.png", 
+        src: "https://res.cloudinary.com/dl2ribpco/image/upload/v1557425121/ChaseTheSpace/template_primary1_iqxyxa.png",
         tileLayer: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     },
     {
