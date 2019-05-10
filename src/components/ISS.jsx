@@ -1,3 +1,4 @@
+/* eslint-disable no-trailing-spaces */
 import React, { Component } from 'react';
 import Leaflet from './Leaflet';
 import Sidebar from './Sidebar';
