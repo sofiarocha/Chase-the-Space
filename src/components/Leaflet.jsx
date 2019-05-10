@@ -88,7 +88,6 @@ class Leaflet extends Component {
             >
                 <TileLayer
                     url={ tileLayer }
-                    attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap contributors</a>"
                 />
                 <Marker className="leaflet-div-icon" position={position} icon={ iconISS } >
                 </Marker> 
