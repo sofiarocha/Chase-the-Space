@@ -61,17 +61,17 @@ class APOD extends Component {
     }
 
     render () {
-        const { selectedPod, weekApod } = this.state;
+        const { selectedPod, weekApod, isLoading } = this.state;
 
-        if(this.state.isLoading) {
+        if (isLoading) {
             return (
                 <div className="spinner">
-                     <ClapSpinner
+                    <ClapSpinner
                         size={50}
                         color="#686769"
-                    /> 
+                    />
                 </div>
-            )
+            );
         }
         return (
             <div className="apod-page">

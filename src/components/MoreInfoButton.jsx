@@ -22,13 +22,13 @@ class MoreInfoButton extends Component {
                 <button className="btn btn-link text-white" onClick={this.handleClick} type="button">
                     {onMoreInfo
                         ? (
-                            <i className="fas fa-chevron-up">
+                            <i className="fas fa-chevron-down">
                                 <br />
                                 Hide info
                             </i>
                         )
                         : (
-                            <i className="fas fa-chevron-down">
+                            <i className="fas fa-chevron-up">
                                 <br />
                                 Show info
                             </i>
