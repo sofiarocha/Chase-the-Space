@@ -19,7 +19,7 @@ class MoreInfoButton extends Component {
         const { pod } = this.props;
         return (
             <Fragment>
-                <button className="btn btn-link" onClick={this.handleClick} type="button">
+                <button className="btn btn-link text-white" onClick={this.handleClick} type="button">
                     {onMoreInfo
                         ? (
                             <i className="fas fa-chevron-up">
