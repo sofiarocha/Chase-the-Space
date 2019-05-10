@@ -5,7 +5,7 @@ import MapList from './MapList';
 
 const availableMaps = [
     {
-        src: "https://res.cloudinary.com/dl2ribpco/image/upload/v1557425121/ChaseTheSpace/template_primary1_iqxyxa.png", 
+        src: "https://res.cloudinary.com/dl2ribpco/image/upload/v1557425121/ChaseTheSpace/template_primary1_iqxyxa.png",
         tileLayer: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     },
     {
@@ -45,7 +45,8 @@ class ISS extends Component {
             <div className="container issComponent">
                 <div className="map-container">
                     <p>
-                        International Space Station || 28,000Km/h || Orbit 92 minutes || Orbits 15.5/day
+                        International Space Station || 28,000Km/h || 
+                        Orbit 92 minutes || Orbits 15.5/day
                     </p>
                     <Leaflet tileLayer={selectedMap.tileLayer} />
                 </div>
@@ -59,6 +60,5 @@ class ISS extends Component {
         );
     }
 }
-
 
 export default ISS;
