@@ -10,7 +10,7 @@ const root = document.getElementById('root');
 if (root) {
     ReactDOM.render(
         <BrowserRouter basename={process.env.ROUTER_BASE_URL}>
-        <Favicon url="https://www.pngkey.com/png/full/15-154688_black-hole-smash-ultimate-circle.png" />
+            <Favicon url="https://www.pngkey.com/png/full/15-154688_black-hole-smash-ultimate-circle.png" />
             <App />
         </BrowserRouter>, root
     );
