@@ -5,26 +5,15 @@ import Game from './Game';
 const Sidebar = () => {
     return (
         <Fragment>
-        <div className="thing">
-            <OverMe />
-        </div>
-        <br></br>
-        <div className="thing">    
-            <Game />
-        </div>
+            <div className="thing p-4">
+                <OverMe />
+            </div>
+            <div className="gamething p-4">
+                <Game />
+            </div>
         </Fragment>
 
     );
 };
 
 export default Sidebar;
-
-
-{/* <div className="container">
-<div className="col-md-3 offset-md-9 align-self-end">
-    <br></br>
-    <OverMe />
-    <br></br>
-    <Game />
-</div>
-</div> */}
