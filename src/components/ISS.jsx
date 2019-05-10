@@ -33,7 +33,7 @@ class ISS extends Component {
     }
 
     onClickedMap = (clickedMap) => {
-        this.setState((state) => {
+        this.setState(() => {
             return { selectedMap: clickedMap };
         });
     }
@@ -43,14 +43,14 @@ class ISS extends Component {
         const { selectedMap, maps } = this.state;
         return (
             <div className="container issComponent">
-                <div className="maplist-container">
-                    <MapList maps={maps} onClickedMap={this.onClickedMap}/>
-                </div>
                 <div className="map-container">
                     <p>
-                        International Space Station -- 28,000Km/h -- Orbit 92 minutes -- Orbits 15.5/day
+                        International Space Station || 28,000Km/h || Orbit 92 minutes || Orbits 15.5/day
                     </p>
-                    <Leaflet tileLayer={selectedMap.tileLayer}/>
+                    <Leaflet tileLayer={selectedMap.tileLayer} />
+                </div>
+                <div className="maplist-container">
+                    <MapList maps={maps} onClickedMap={this.onClickedMap} />
                 </div>
                 <div className="sidebar-container">
                     <Sidebar />

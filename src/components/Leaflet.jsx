@@ -5,10 +5,10 @@ import { ClapSpinner } from 'react-spinners-kit';
 
 
 const iconISS = L.icon({
-      iconUrl: "https://res.cloudinary.com/dl2ribpco/image/upload/v1557235636/ChaseTheSpace/iconISS-flip_hiaznc.png",
-      iconSize: new L.Point(45, 50),
-      className: 'leaflet-div-icon'
-  });
+    iconUrl: "https://res.cloudinary.com/dl2ribpco/image/upload/v1557235636/ChaseTheSpace/iconISS-flip_hiaznc.png",
+    iconSize: new L.Point(45, 50),
+    className: 'leaflet-div-icon'
+});
 
 
 class Leaflet extends Component {
@@ -28,13 +28,13 @@ class Leaflet extends Component {
 
     getPosition = () => {
         fetch("https://cors-anywhere.herokuapp.com/http://api.open-notify.org/iss-now.json")
-                .then(response => response.json()) 
-                .then(data => {
-                    this.setState ({
-                        lat: data.iss_position.latitude,
-                        lng: data.iss_position.longitude,
-                        isLoaded: true,
-                    });
+            .then(response => response.json())
+            .then((data) => {
+                this.setState({
+                    lat: data.iss_position.latitude,
+                    lng: data.iss_position.longitude,
+                    isLoaded: true,
+                });
             });
     }
 
@@ -47,52 +47,55 @@ class Leaflet extends Component {
 
     handleZoom = (e) => {
         this.setState({
+            // eslint-disable-next-line no-underscore-dangle
             zoom: e.target._zoom
-        })
+        });
     }
-    
+
     componentDidMount = () => {
         this.setTimer();
         this.getPosition();
-
     }
 
     componentWillUnmount = () => {
-        clearInterval(this.state.intervalId);
+        const { intervalId } = this.state;
+        clearInterval(intervalId);
     }
 
 
     render() {
-        const position = [this.state.lat, this.state.lng];
+        const { lat, lng } = this.state;
+        const position = [lat, lng];
         const { tileLayer } = this.props;
-
-        //show spinner while the map is loading//
-        if (!this.state.isLoaded) { 
-            return(
+        // eslint-disable-next-line object-curly-newline
+        const { centerLat, centerLng, zoom, handleZoom } = this.state;
+        // show spinner while the map is loading//
+        const { isLoaded } = this.state;
+        if (!isLoaded) {
+            return (
                 <div className="spinner">
-                     <ClapSpinner
+                    <ClapSpinner
                         size={50}
                         color="#686769"
-                    /> 
+                    />
                 </div>
-            )
-         };
+            );
+        }
         return (
-            <Map 
+            <Map
                 className="mapsizing"
-                id="mapid" 
-                center={[this.state.centerLat, this.state.centerLng]} 
-                zoom={this.state.zoom} 
-                zoomControl={true}
-                onZoomend={this.handleZoom} 
+                id="mapid"
+                center={[centerLat, centerLng]}
+                zoom={zoom}
+                zoomControl
+                onZoomend={handleZoom}
             >
                 <TileLayer
-                    url={ tileLayer }
+                    url={tileLayer}
                 />
-                <Marker className="leaflet-div-icon" position={position} icon={ iconISS } >
-                </Marker> 
+                <Marker className="leaflet-div-icon" position={position} icon={iconISS} />
             </Map>
-        )
+        );
     }
 }
 

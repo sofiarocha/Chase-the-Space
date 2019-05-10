@@ -1,10 +1,11 @@
+/* eslint-disable no-unused-expressions */
 import React from 'react';
 
-const SelectedMap = ({selectedMap}) => {
+const SelectedMap = ({ selectedMap }) => {
     <img
-        src = {selectedMap}
+        src={selectedMap}
         alt=""
-    />
+    />;
 };
 
 export default SelectedMap;
