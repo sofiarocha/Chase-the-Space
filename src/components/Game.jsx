@@ -66,8 +66,8 @@ class Game extends Component {
                     && (hasCorrectAnswer ? <p className="green"> Correct! </p> : <p className="red">Try again :(</p>)}
                     </div>
 
-                    { hasCorrectAnswer &&
-                            astronauts.map(astronaut => (
+                    { hasCorrectAnswer
+                            && astronauts.map(astronaut => (
                                 <p key={astronaut.name}>
                                     {' '}
                                     <a href={`http://en.wikipedia.org/wiki/${astronaut.name}`} target="_blank" rel="noopener noreferrer">{astronaut.name}</a>
