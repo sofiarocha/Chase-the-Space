@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-one-expression-per-line */
-/* eslint-disable react/jsx-no-comment-textnodes */
 import React, { Component, Fragment } from 'react';
 
 class MoreInfoButton extends Component {
@@ -39,8 +38,6 @@ class MoreInfoButton extends Component {
                 {onMoreInfo
                     && (
                         <p>
-                            // eslint-disable-next-line react/jsx-one-expression-per-line
-                            // eslint-disable-next-line react/jsx-one-expression-per-line
                             {pod.date} - {pod.title}
                             <br />
                             {pod.explanation}
