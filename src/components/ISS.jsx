@@ -5,35 +5,35 @@ import MapList from './MapList';
 
 const availableMaps = [
     {
-        src:"https://res.cloudinary.com/dl2ribpco/image/upload/v1557343515/ChaseTheSpace/Sem_T%C3%ADtulo1_yineiu.png", 
-        tileLayer:"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        src: "https://res.cloudinary.com/dl2ribpco/image/upload/v1557425121/ChaseTheSpace/template_primary1_iqxyxa.png", 
+        tileLayer: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     },
     {
-        src:"https://res.cloudinary.com/dl2ribpco/image/upload/v1557392939/ChaseTheSpace/Screenshot_from_2019-05-09_10-05-38_yqrc1j.png",
-        tileLayer:"https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+        src: "https://res.cloudinary.com/dl2ribpco/image/upload/v1557425121/ChaseTheSpace/template_primary2_uzyyfd.jpg",
+        tileLayer: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
     },
     {
-        src:"https://res.cloudinary.com/dl2ribpco/image/upload/v1557343515/ChaseTheSpace/Sem_T%C3%ADtulo3_cyuj4k.png",
-        tileLayer:"https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"
+        src: "https://res.cloudinary.com/dl2ribpco/image/upload/v1557425121/ChaseTheSpace/template_primary3_lctvdq.jpg",
+        tileLayer: "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png"
     },
     {
-        src:"https://res.cloudinary.com/dl2ribpco/image/upload/v1557408278/ChaseTheSpace/Screenshot_from_2019-05-09_14-22-33_kus14z.png",
-        tileLayer:"https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg"
+        src: "https://res.cloudinary.com/dl2ribpco/image/upload/v1557425121/ChaseTheSpace/template_primary4_jkociy.jpg",
+        tileLayer: "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg"
     }
-]
+];
 
 
 class ISS extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             selectedMap: availableMaps[0],
             maps: availableMaps
-        }
+        };
     }
 
-    onClickedMap = clickedMap => {
-        this.setState(state => {
+    onClickedMap = (clickedMap) => {
+        this.setState((state) => {
             return { selectedMap: clickedMap };
         });
     }
@@ -47,8 +47,9 @@ class ISS extends Component {
                     <MapList maps={maps} onClickedMap={this.onClickedMap}/>
                 </div>
                 <div className="map-container">
-                    <p>The International Space Station is moving at close to 28,000 Km/h. It circles the Earth in roughly 92 minutes and completes 15.5 orbits per day.
-                    Where is it right now?</p>
+                    <p>
+                        International Space Station -- 28,000Km/h -- Orbit 92 minutes -- Orbits 15.5/day
+                    </p>
                     <Leaflet tileLayer={selectedMap.tileLayer}/>
                 </div>
                 <div className="sidebar-container">
