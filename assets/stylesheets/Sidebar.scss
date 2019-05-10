@@ -1,5 +1,7 @@
 
-
+.sidebar-container{
+  padding-right: 50px;
+}
 .flex{
   display: flex;
    flex-direction: column;
@@ -24,6 +26,10 @@
   display: inline-block;
   border-radius: 8px;
 }
+
+.fb-share-button{
+  padding-bottom: 20px;
+}
 .bar {
   border-radius: 8px;
 }
@@ -40,10 +46,14 @@
   box-shadow: 15px 15px 15px rgba(#313031, .9);
   border-radius: 10px;
   h5{
-    padding-top: 10px;
+    padding-top: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
   }
   p{
-    padding-top: 10px;
+    padding-top: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
   }
   .gamething{
     padding-bottom: 20px;
@@ -56,5 +66,5 @@
 }
 
 .time{
-  font-size: 180%
+  font-size: 180%;
 }
