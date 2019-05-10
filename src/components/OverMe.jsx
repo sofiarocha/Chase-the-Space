@@ -36,24 +36,24 @@ class OverMe extends Component {
         const hours = time.getHours();
         const minutes = time.getMinutes();
         if (minutes < 10) {
-            return `${hours  }:${ 0  }${minutes}`;
+            return `${hours}:${0}${minutes}`;
         }
         if (hours < 10) {
-            return `${hours  }:${  minutes  } AM`;
+            return `${hours}:${minutes} AM`;
         }
-        return `${hours  }:${  minutes}`;
+        return `${hours}:${minutes}`;
     }
 
     render() {
+        const { passtime } = this.state;
         return (
             <div className="text-white">
                 <p>
-The next time the International Space Station will be over me will be at
-{' '}
-<span className="time">{this.getMilli(this.state.passtime)}</span>
-</p>
-                <div className="fb-share-button" data-href="https://sofiarocha.github.io/Chase-the-Space/" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsofiarocha.github.io%2FChase-the-Space%2F&amp;src=sdkpreparse" className="fb-xfbml-parse-ignore">Share</a></div>
-
+                    The next time the International Space Station will be over me will be at
+                    {' '}
+                    <span className="time">{this.getMilli(passtime)}</span>
+                </p>
+                <div className="fb-share-button" data-href="https://sofiarocha.github.io/Chase-the-Space/" data-layout="button_count" data-size="small"><a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsofiarocha.github.io%2FChase-the-Space%2F&amp;src=sdkpreparse" className="fb-xfbml-parse-ignore">Share</a></div>
             </div>
         );
     }
