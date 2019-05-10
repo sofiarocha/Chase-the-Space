@@ -1,6 +1,5 @@
 body {
     padding-top: 86px;
-    
   }
 
 .issComponent {
@@ -38,10 +37,11 @@ body {
 }
 
 .maplist-container {
-    display:flex;
+    display: flex;
+    align-items: center;
     flex-direction: column;
     width:5%;
-    padding-top: 10vw;
+    padding-top: 9vw;
     padding-bottom: 2vw;
     margin-right: 5vw;
     img {

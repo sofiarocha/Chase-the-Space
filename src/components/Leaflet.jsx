@@ -22,6 +22,7 @@ class Leaflet extends Component {
             intervalId: undefined,
             isLoaded: false,
             zoom: '1',
+            // eslint-disable-next-line react/no-unused-state
             isLoading: true
         };
     }
@@ -40,6 +41,7 @@ class Leaflet extends Component {
 
     setTimer = () => {
         this.setState({
+            // eslint-disable-next-line no-use-before-define
             intervalId: interval
         });
         const interval = setInterval(this.getPosition, 10000);
