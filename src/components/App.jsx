@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import Footer from './Footer';
 import NavigationBar from './NavigationBar';
 import Home from './Home';
@@ -17,6 +17,8 @@ const App = () => {
                 <Route path="/iss" component={ISS} />
                 <Route path="/apod" component={APOD} />
                 <Route path="/about" component={AboutUs} />
+                <Route path="/404" component={AboutUs} />
+                <Redirect to="/404" />
             </Switch>
             <Footer />
         </div>

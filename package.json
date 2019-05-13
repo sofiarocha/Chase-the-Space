@@ -45,6 +45,6 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --env.ENVIRONMENT=development",
     "lint": "eslint './src/**/*.js*'",
-    "deploy": "webpack -p --env.ENVIRONMENT=production && gh-pages -d build"
+    "deploy": "webpack -p --env.ENVIRONMENT=production && cp build/index.html build/404.html && gh-pages -d build"
   }
 }
