@@ -6,21 +6,16 @@
 }
 .links{
         .active {
-            background-color: rgba(111, 167, 150, 0.418);
-            border: none;
-            color: black;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            cursor: pointer;
-            border-radius: 16px;
+            border-bottom:3px solid rgba(57, 233, 151, 0.774);
+            border-radius: 1px;
           }
           
-          .active:hover {
-            background-color: #8eecdc56;
-          }
         }
+// .nav-link:hover {
+//   background-color: #8eecdc56;
+//   border-radius: 3px;
+
+// }
   .aboutuslink{
     padding-right: 30px;
   }
