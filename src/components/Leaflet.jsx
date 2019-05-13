@@ -21,7 +21,7 @@ class Leaflet extends Component {
             centerLng: 0,
             intervalId: undefined,
             isLoaded: false,
-            zoom: '1'
+            zoom: '3'
         };
     }
 
@@ -84,7 +84,7 @@ class Leaflet extends Component {
             <Map
                 className="mapsizing"
                 id="mapid"
-                center={[centerLat, centerLng]}
+                center={[lat, lng]}
                 zoom={zoom}
                 zoomControl
                 onZoomend={handleZoom}
