@@ -5,7 +5,8 @@ class OverMe extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            passtime: 0
+            passtime: 0,
+            isLoading: true
         };
     }
 
@@ -25,7 +26,8 @@ class OverMe extends Component {
                 .then(response => response.json())
                 .then((data) => {
                     this.setState({
-                        passtime: data.response[0].risetime * 1000
+                        passtime: data.response[0].risetime * 1000,
+                        isLoading: false
                     });
                 });
         });
@@ -45,14 +47,23 @@ class OverMe extends Component {
     }
 
     render() {
-        const { passtime } = this.state;
+        const { passtime, isLoading } = this.state;
         return (
             <div className="text-white">
-                <p>
+                {isLoading && (
+                    <p>
                     The next time the International Space Station will be over me will be at
-                    {' '}
-                    <span className="time">{this.getMilli(passtime)}</span>
-                </p>
+                    loading...
+                    </p>
+                )}
+
+                {!isLoading && (
+                    <p>
+                    The next time the International Space Station will be over me will be at
+                        {' '}
+                        <span className="time">{this.getMilli(passtime)}</span>
+                    </p>
+                )}
                 <div className="fb-share-button" data-href="https://sofiarocha.github.io/Chase-the-Space/" data-layout="button_count" data-size="small"><a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fsofiarocha.github.io%2FChase-the-Space%2F&amp;src=sdkpreparse" className="fb-xfbml-parse-ignore">Share</a></div>
             </div>
         );
