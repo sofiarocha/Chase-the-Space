@@ -11,13 +11,25 @@
 body {
   font-family: 'Raleway', sans-serif;
   background-color: black;
+  padding-top: 86px;
   }
   .h1 {
     font-weight: 700;
   }
   .h5 {
     font-weight: 300;
-  
+}
+
+.not-found {
+  text-align: center;
+  color: #ffffff;
+  height: 77.4vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  h2 {
+    font-weight: 500;
+  }
 }
 
 

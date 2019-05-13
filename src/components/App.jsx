@@ -6,7 +6,7 @@ import Home from './Home';
 import ISS from './ISS';
 import APOD from './APOD';
 import AboutUs from './AboutUs';
-
+import Page404 from './Page404';
 
 const App = () => {
     return (
@@ -17,7 +17,7 @@ const App = () => {
                 <Route path="/iss" component={ISS} />
                 <Route path="/apod" component={APOD} />
                 <Route path="/about" component={AboutUs} />
-                <Route path="/404" component={AboutUs} />
+                <Route path="/404" component={Page404} />
                 <Redirect to="/404" />
             </Switch>
             <Footer />
