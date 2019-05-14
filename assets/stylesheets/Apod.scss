@@ -16,10 +16,11 @@ $apod-page-height: 77.4vh;
     display: flex;
     flex-direction: column;
     p {
+        overflow-y: auto;
         background-color: rgba(14, 8, 8, 0.548);
         color: rgb(224, 221, 221);
         padding: 2vw;
-        font-size: calc(8px + 0.5vw);
+        font-size: 14px;
     }
 }
 
@@ -44,7 +45,7 @@ $apod-page-height: 77.4vh;
         width: 100%;
     }
     .pod-description {
-        font-size: calc(6px + 0.5vw);
+        font-size: 10px;
         color: #ffffff;
         margin-bottom: 0;
         text-align: center;
@@ -63,7 +64,8 @@ $apod-page-height: 77.4vh;
         display: block;
     }
     .pod {
-        height: 33vh;
+        margin-top: 2vh;
+        height: 35vh;
         width: 100vw;
     }
     .week-pod {

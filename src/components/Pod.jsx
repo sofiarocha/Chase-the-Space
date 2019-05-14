@@ -14,7 +14,7 @@ const Pod = ({ apod, handleCkickPod }) => {
         return (
             <div className="week-pod" onClick={handleClick} role="presentation">
                 <p className="pod-description">
-                    {apod.date} 
+                    {apod.date}
                     <br />
                     {apod.title}
                 </p>

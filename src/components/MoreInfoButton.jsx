@@ -11,7 +11,9 @@ class MoreInfoButton extends Component {
 
     handleClick = () => {
         this.setState((state) => {
-            return { onMoreInfo: !state.onMoreInfo };
+            return {
+                onMoreInfo: !state.onMoreInfo
+            };
         });
     }
 
@@ -37,7 +39,7 @@ class MoreInfoButton extends Component {
                 </button>
                 {onMoreInfo
                     && (
-                        <p>
+                        <p className="expanded-mobile">
                             {pod.date} - {pod.title}
                             <br />
                             {pod.explanation}
