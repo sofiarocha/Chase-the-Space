@@ -57,3 +57,24 @@ $apod-page-height: 77.4vh;
     width: 100%;
     height: $apod-page-height;
 }
+
+@media (max-width: 767px) {
+    .apod-page {
+        display: block;
+    }
+    .pod {
+        height: 33vh;
+        width: 100vw;
+    }
+    .week-pod {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .week-pictures {
+        height: 44vh;
+        width: 100vw;
+        overflow: auto;
+
+    }
+}
