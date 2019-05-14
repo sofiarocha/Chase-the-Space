@@ -53,7 +53,7 @@ class Game extends Component {
         } = this.state;
         return (
             <Fragment>
-                <div className="text-white h-100 game">
+                <div className="text-white game">
                     <form>
                         <h5>Guess how many people are in space</h5>
                         <input className="bar" type="number" value={number} min="0" onChange={this.handleChange} />
