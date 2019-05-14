@@ -12,9 +12,9 @@ const Pod = ({ apod, handleCkickPod }) => {
     const handleClick = () => handleCkickPod(apod);
     if (apod.media_type === "video") {
         return (
-            <div onClick={handleClick} role="presentation">
+            <div className="week-pod" onClick={handleClick} role="presentation">
                 <p className="pod-description">
-                    {apod.date} 
+                    {apod.date}
                     <br />
                     {apod.title}
                 </p>
@@ -23,7 +23,7 @@ const Pod = ({ apod, handleCkickPod }) => {
         );
     }
     return (
-        <div onClick={handleClick} role="presentation">
+        <div className="week-pod" onClick={handleClick} role="presentation">
             <p className="pod-description">
                 {apod.date}
                 <br />
