@@ -35,6 +35,7 @@
   height: 50%;
   width: 100%;
   text-align: center;
+  overflow-y: auto;
 }
 
 .time{
@@ -42,8 +43,6 @@
 }
 
 .game {
-  overflow-y: auto;
-  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;

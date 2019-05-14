@@ -1,6 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-useless-constructor */
-/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import { NavLink, Link } from "react-router-dom";
 import {
@@ -38,7 +35,7 @@ class NavigationBar extends Component {
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav onClick={this.closeNav} className ="mr-auto links">
+                        <Nav onClick={this.closeNav} className="mr-auto links">
                             <NavLink exact to="/" className="nav-link text-white activeStyle">HOME</NavLink>
                             <NavLink to="/iss" className="nav-link text-white">ISS</NavLink>
                             <NavLink to="/apod" className="nav-link text-white">APOD</NavLink>
