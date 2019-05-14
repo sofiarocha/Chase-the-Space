@@ -78,9 +78,15 @@ body {
     .maplist-container{
         display: flex;
         flex-direction: row;
-        width: 20%;
-        margin-left: 8vw;
+        width: 100%;
         padding-top: 5vw;
+        justify-content: center;
+        img {
+            width:19%;
+            border-radius: 50%;
+            margin-top:1vw;
+            margin-left: 1.5vw;
+        }
     }
     .sidebar-container {
         height: 50vh;
