@@ -8,7 +8,7 @@ const Card = ({ card }) => {
             <div className="card-image">
                 <img src={card.imageSrc} alt={card.title.toLowerCase()} />
             </div>
-            <p>{card.description}</p>
+            <p className="card-description">{card.description}</p>
         </Link>
     );
 };

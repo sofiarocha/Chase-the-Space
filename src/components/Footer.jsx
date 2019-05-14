@@ -5,12 +5,12 @@ const Footer = () => {
     return (
         <footer className="bg-dark footerComponent  ">
             <div>
-                ChaseTheSpace@2019 made by &nbsp;&nbsp;
+                ChaseTheSpace@2019 made by &nbsp;
                 <Link to="/about">
                 Us
                 </Link>
-                &nbsp;&nbsp; at &nbsp;&nbsp;
-                <a target="_blank" rel="noopener noreferrer" href="https://wildcodeschool.com/"> Wild Code School</a>
+                &nbsp; at &nbsp;
+                <a target="_blank" rel="noopener noreferrer" href="https://wildcodeschool.com/">Wild Code School</a>
             </div>
 
         </footer>
