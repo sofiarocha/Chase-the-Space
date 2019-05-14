@@ -12,3 +12,10 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
   }
+  
+  @media (max-width: 767px) {
+    .aboutUsComponent {
+      display: block;
+      overflow: auto;
+    }
+  }
