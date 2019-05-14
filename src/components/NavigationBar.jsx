@@ -17,7 +17,7 @@ class NavigationBar extends Component {
     render() {
         return (
             <div>
-                <Navbar collapseOnSelect fixed="top" expand="lg" bg="dark" variant="dark">
+                <Navbar collapseOnSelect expanded = {false} fixed="top" expand="lg" bg="dark" variant="dark">
                     <Navbar.Brand>
                         <NavLink exact to="/" className="navbar-brand text-white">
                             <img src="https://www.pngkey.com/png/full/15-154688_black-hole-smash-ultimate-circle.png" width="50" height="50" className="d-inline-block" alt="" />
