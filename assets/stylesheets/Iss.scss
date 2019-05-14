@@ -78,11 +78,11 @@ body {
     .maplist-container{
         display: flex;
         flex-direction: row;
-        width: 20%;
-        margin-left: 5vw;
+        width: 100%;
         padding-top: 5vw;
+        justify-content: center;
         img {
-            width:100%;
+            width:19%;
             border-radius: 50%;
             margin-top:1vw;
             margin-left: 1.5vw;
